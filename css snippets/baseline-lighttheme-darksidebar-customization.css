@@ -88,6 +88,38 @@
 }
 
 /* ========================================
+   SIDEBAR TOGGLE BUTTONS
+   ======================================== */
+
+/* Left sidebar toggle button hover */
+.sidebar-toggle-button.mod-left:hover,
+.sidebar-toggle-button.mod-left:hover .clickable-icon,
+.sidebar-toggle-button.mod-left:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Right sidebar toggle button hover */
+.sidebar-toggle-button.mod-right:hover,
+.sidebar-toggle-button.mod-right:hover .clickable-icon,
+.sidebar-toggle-button.mod-right:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Ensure sidebar toggle buttons are always white */
+.sidebar-toggle-button .clickable-icon,
+.sidebar-toggle-button .clickable-icon svg,
+.sidebar-toggle-button svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* ========================================
    NAVIGATION & FILE EXPLORER
    ======================================== */
 
@@ -95,6 +127,32 @@
 .workspace-sidedock-vault-profile,
 .workspace-sidedock-vault-profile * {
   color: var(--secondary-text-color) !important;
+}
+
+/* Vault switcher hover effects */
+.workspace-drawer-vault-switcher:hover,
+.workspace-drawer-vault-switcher:hover * {
+  color: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Vault switcher clickable icons */
+.workspace-drawer-vault-switcher .clickable-icon,
+.workspace-drawer-vault-switcher .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Vault switcher clickable icons hover */
+.workspace-drawer-vault-switcher .clickable-icon:hover,
+.workspace-drawer-vault-switcher .clickable-icon:hover svg,
+.workspace-drawer-vault-switcher:hover .clickable-icon,
+.workspace-drawer-vault-switcher:hover .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
 }
 
 /* File and folder navigation items */
@@ -129,13 +187,15 @@
   color: var(--primary-text-color) !important;
 }
 
-/* Navigation toolbar hover effects */
+/* Navigation toolbar hover effects - WHITE ICONS with BACKGROUND */
 .nav-buttons-container .clickable-icon:hover,
 .nav-buttons-container .clickable-icon:hover svg,
 .nav-action-button:hover,
 .nav-action-button:hover .clickable-icon,
 .nav-action-button:hover svg {
-  color: var(--accent-color) !important;
+  color: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
 }
 
 /* Active file/folder styling */
@@ -193,14 +253,16 @@
   color: var(--primary-text-color) !important;
 }
 
-/* Right sidedock icons hover */
+/* Right sidedock icons hover - WHITE ICONS with BACKGROUND */
 .workspace-split.mod-horizontal.mod-sidedock.mod-right-split .clickable-icon:hover,
 .workspace-split.mod-horizontal.mod-sidedock.mod-right-split .clickable-icon:hover svg,
 .workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover,
 .workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover .clickable-icon,
 .workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover svg {
-  color: var(--accent-color) !important;
-  stroke: var(--accent-color) !important;
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
 }
 
 /* Right sidedock menu items hover */
@@ -243,8 +305,8 @@
   color: var(--primary-text-color) !important;
 }
 
-/* ========================================
-   WORKSPACE TABS
+//* ========================================
+   WORKSPACE TABS - MODIFIED TO EXCLUDE MAIN EDITOR
    ======================================== */
 
 /* Active tab styling */
@@ -261,15 +323,25 @@
   color: var(--secondary-text-color) !important;
 }
 
-/* Tab hover effects */
-.workspace-tab-header-container .workspace-tab-header:hover .clickable-icon,
-.workspace-tab-header-container .workspace-tab-header:hover svg,
-.workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon {
+/* Tab hover effects - WHITE ICONS with BACKGROUND - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon {
   color: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Show close icon with barely red background on active tabs - only on hover - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header.is-active:hover .workspace-tab-header-inner-close-button {
+  opacity: 1 !important;
+  visibility: visible !important;
+  background-color: rgb(230, 230, 230) !important;
+  border-radius: 50% !important;
 }
 
 /* ========================================
-   WORKSPACE TAB HEADER CONTAINER ICONS FIX
+   WORKSPACE TAB HEADER CONTAINER ICONS FIX - EXCLUDE MAIN EDITOR
    ======================================== */
 
 /* Target all icons in tab headers - force white color */
@@ -289,21 +361,43 @@
   stroke: var(--primary-text-color) !important;
 }
 
-/* Hover effects for tab header icons */
-.workspace-tab-header-container .clickable-icon:hover,
-.workspace-tab-header-container .clickable-icon:hover svg,
-.workspace-tab-header-container .view-action:hover,
-.workspace-tab-header-container .view-action:hover svg,
-.workspace-tab-header-container .workspace-tab-header .clickable-icon:hover,
-.workspace-tab-header-container .workspace-tab-header .clickable-icon:hover svg,
-.workspace-tab-header .clickable-icon:hover,
-.workspace-tab-header .clickable-icon:hover svg,
-.workspace-tab-header .view-action:hover,
-.workspace-tab-header .view-action:hover svg,
-.workspace-tab-header-inner .clickable-icon:hover,
-.workspace-tab-header-inner .clickable-icon:hover svg {
-  color: var(--accent-color) !important;
-  stroke: var(--accent-color) !important;
+/* Hover effects for entire tab header area - EXPANDED HOVER AREA - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover {
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Keep icons white on tab header hover - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .clickable-icon svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .view-action,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .view-action svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Specific hover for individual clickable icons within tabs - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .clickable-icon:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .view-action:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-inner .clickable-icon:hover {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+  padding: 2px !important;
+}
+
+/* Specific hover for SVG elements inside tab headers - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .clickable-icon:hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .view-action:hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-inner .clickable-icon:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
 }
 
 /* Override any existing tab header specific rules */
@@ -317,12 +411,38 @@
   stroke: var(--primary-text-color) !important;
 }
 
-/* Ensure hover works on both active and inactive tabs */
-.workspace-tab-header-container .workspace-tab-header:hover .clickable-icon,
-.workspace-tab-header-container .workspace-tab-header:hover svg,
-.workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon {
-  color: var(--accent-color) !important;
-  stroke: var(--accent-color) !important;
+/* Ensure hover works on both active and inactive tabs - FULL TAB AREA - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header .clickable-icon:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .workspace-tab-header-inner .clickable-icon:hover {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+  padding: 4px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
+
+/* ========================================
+   NEW TAB BUTTON HOVER - INCLUDE IN MAIN EDITOR
+   ======================================== */
+
+/* New tab button hover effects - applies everywhere including main editor */
+.workspace-tab-header-new-tab:hover,
+.workspace-tab-header-new-tab:hover .clickable-icon,
+.workspace-tab-header-new-tab:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Ensure new tab button has white icon by default */
+.workspace-tab-header-new-tab .clickable-icon,
+.workspace-tab-header-new-tab svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
 }
 
 /* ========================================
@@ -341,7 +461,7 @@
   stroke: var(--primary-text-color) !important;
 }
 
-/* Hover effects for vault actions drawer icons */
+/* Hover effects for vault actions drawer icons - WHITE ICONS with BACKGROUND */
 .workspace-drawer-vault-actions .clickable-icon:hover,
 .workspace-drawer-vault-actions .clickable-icon:hover svg,
 .workspace-drawer-vault-actions .nav-action-button:hover,
@@ -349,8 +469,10 @@
 .workspace-drawer-vault-actions .nav-action-button:hover svg,
 .workspace-drawer .workspace-drawer-vault-actions .clickable-icon:hover,
 .workspace-drawer .workspace-drawer-vault-actions .clickable-icon:hover svg {
-  color: var(--accent-color) !important;
-  stroke: var(--accent-color) !important;
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
 }
 
 /* ========================================
@@ -436,14 +558,14 @@
   background-color: var(--hover-color) !important;
 }
 
-/* Hover accent colors */
+/* Hover accent colors - CHANGED FROM BLUE TO WHITE */
 .menu.query-toolbar-menu.mod-properties .menu-item:hover .menu-item-title,
 .menu.query-toolbar-menu.mod-properties .menu-item:hover .menu-item-icon,
 .menu.query-toolbar-menu.mod-properties .menu-item:hover .clickable-icon,
 .menu.query-toolbar-menu.mod-filters .menu-item:hover .menu-item-title,
 .menu.query-toolbar-menu.mod-filters .menu-item:hover .menu-item-icon,
 .menu.query-toolbar-menu.mod-filters .menu-item:hover .clickable-icon {
-  color: var(--accent-color) !important;
+  color: var(--primary-text-color) !important;
 }
 
 /* Form controls in query toolbars */
