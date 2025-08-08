@@ -497,6 +497,13 @@
    VERTICAL TAB HEADERS - CUSTOM STYLING
    ======================================== */
 
+/* Search input and clear button - BLACK TEXT for readability */
+.modal.mod-settings .vertical-tab-header-group .search-input-container,
+.modal.mod-settings .vertical-tab-header-group .search-input-container *,
+.modal.mod-settings .vertical-tab-header-group .search-input-clear-button,
+.modal.mod-settings .vertical-tab-header-group .search-input-clear-button * {
+  color: black !important;
+}
 /* Vertical tab header group text - WHITE TEXT */
 .modal.mod-settings .vertical-tab-header-group,
 .modal.mod-settings .vertical-tab-header-group * {
