@@ -47,3 +47,7 @@ This repository contains my customizations for the Obsidian Baseline theme. Foll
 #### Pixel Banner
 - Adds header images to notes
 - Search for "Pixel Banner" in Community Plugins
+
+#### Dynamic Editor Width
+- Allows for a more flexible editor width
+- Search for "Dynamic Editor Width" in Community Plugins
