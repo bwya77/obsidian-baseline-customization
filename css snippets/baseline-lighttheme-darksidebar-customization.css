@@ -939,3 +939,26 @@
 .workspace-tab-header.tappable:not(.is-active):hover {
   background-color: var(--hover-color) !important;
 }
+
+
+/* ========================================
+   ICONIZE MODAL PROMPT RESULTS - WHITE TEXT
+   ======================================== */
+
+/* Iconize modal prompt results - White text */
+.prompt-results.iconize-modal,
+.prompt-results.iconize-modal *,
+.prompt-results.iconize-modal .suggestion-item,
+.prompt-results.iconize-modal .suggestion-item *,
+.prompt-results.iconize-modal .suggestion-title,
+.prompt-results.iconize-modal .suggestion-content,
+.prompt-results.iconize-modal .suggestion-note {
+  color: var(--primary-text-color) !important;
+}
+
+/* Selected suggestion in iconize modal */
+.prompt-results.iconize-modal .suggestion-item.is-selected,
+.prompt-results.iconize-modal .suggestion-item.is-selected * {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
