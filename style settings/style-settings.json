@@ -1,0 +1,22 @@
+{
+  "baseline-style@@accented-interface": true,
+  "baseline-style@@color-scheme-light": "default-light",
+  "baseline-style@@background-contrast-light": "contrast-light",
+  "baseline-style@@color-scheme-dark": "default-dark",
+  "baseline-style@@background-contrast-dark": "contrast-dark",
+  "baseline-style@@background-primary@@dark": "#23282E",
+  "baseline-style@@background-secondary@@dark": "#171B21",
+  "baseline-style@@background-secondary@@light": "#1C2128",
+  "baseline-style@@background-modifier-hover@@dark": "#6AA164",
+  "baseline-style@@layout-style": "layout-baseline",
+  "baseline-style@@status-bar-style": "status-bar-compact",
+  "baseline-style@@labeled-nav-off": true,
+  "baseline-style@@hide-help": true,
+  "baseline-style@@hide-vault-switcher": "hide-vault-switcher-off",
+  "baseline-style@@h1-font": "Avenir",
+  "baseline-style@@h2-font": "Avenir",
+  "baseline-style@@h3-font": "Avenir",
+  "baseline-style@@h4-font": "Avenir",
+  "baseline-style@@h5-font": "Avenir",
+  "baseline-style@@h6-font": "Avenir"
+}

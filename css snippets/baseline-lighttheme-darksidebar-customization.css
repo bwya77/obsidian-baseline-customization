@@ -1,0 +1,530 @@
+/* ========================================
+   OBSIDIAN DARK THEME IMPROVEMENTS
+   Clean, organized CSS for better readability
+   ======================================== */
+
+/* ========================================
+   CSS VARIABLES - THEME COLORS
+   ======================================== */
+:root {
+  /* Text Colors */
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #b3b3b3;
+  --muted-text-color: #909090;
+  --dark-text-color: #2e2e2e;
+
+  /* Accent Colors */
+  --accent-color: rgb(85, 172, 238);
+  --accent-hover: rgba(85, 172, 238, 0.3);
+  --accent-active: rgba(126, 154, 213, 0.167);
+
+  /* Background Colors */
+  --light-background: #ffffff;
+  --dark-background: #f5f5f5;
+  --code-background-light: rgb(243, 245, 247);
+  --code-background-dark: rgb(27, 32, 37);
+  --properties-background-light: rgb(243, 245, 247);
+  --properties-background-dark: rgb(50, 50, 50);
+
+  /* Form Controls */
+  --disabled-background: #e0e0e0;
+  --disabled-border: #ccc;
+}
+
+/* ========================================
+   MODAL DIALOGS - UNIFIED STYLING
+   ======================================== */
+
+/* Base modal styling - White backgrounds with dark text */
+.modal.mod-settings .modal-content,
+.modal-container.mod-confirmation .modal,
+.modal-container.mod-confirmation .modal-content,
+.modal-container.mod-confirmation .modal-bg,
+.modal-container.mod-confirmation .modal-header,
+.modal-container.mod-confirmation .modal-button-container,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .modal-content,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .modal-container,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .community-modal-content {
+  background-color: var(--light-background) !important;
+  color: var(--dark-text-color) !important;
+}
+
+/* Modal text elements - Dark text for readability */
+.modal.mod-settings .modal-content *,
+.modal.mod-settings .setting-item-name,
+.modal.mod-settings .setting-item-description,
+.modal.mod-settings .setting-item-info,
+.modal.mod-settings .setting-item h3,
+.modal.mod-settings .setting-item h4,
+.modal.mod-settings .setting-item p,
+.modal.mod-settings .setting-item span,
+.modal.mod-settings .setting-item label,
+.modal-container.mod-confirmation *,
+.modal-container.mod-confirmation .modal-title,
+.modal-container.mod-confirmation .modal-content *,
+.modal-container.mod-confirmation p,
+.modal-container.mod-confirmation span,
+.modal-container.mod-confirmation div,
+.modal-container.mod-confirmation h1,
+.modal-container.mod-confirmation h2,
+.modal-container.mod-confirmation h3,
+.modal-container.mod-confirmation h4,
+.modal-container.mod-confirmation label,
+.modal-container.mod-confirmation button,
+.modal-container.mod-confirmation .button {
+  color: var(--dark-text-color) !important;
+}
+
+/* Modal form controls - Dark text on light backgrounds */
+.modal.mod-settings select,
+.modal.mod-settings select option,
+.modal.mod-settings .dropdown,
+.modal.mod-settings .suggestion-item,
+.modal.mod-settings .suggestion-content {
+  color: var(--dark-text-color) !important;
+  background-color: var(--dark-background) !important;
+}
+
+/* ========================================
+   NAVIGATION & FILE EXPLORER
+   ======================================== */
+
+/* Vault profile section */
+.workspace-sidedock-vault-profile,
+.workspace-sidedock-vault-profile * {
+  color: var(--secondary-text-color) !important;
+}
+
+/* File and folder navigation items */
+.nav-folder-title,
+.nav-file-title,
+.nav-file-title-content,
+.tree-item-inner,
+.tree-item-self,
+.nav-folder .nav-folder-title,
+.nav-files-container .nav-file .nav-file-title,
+.nav-files-container .nav-folder .nav-folder-title,
+.nav-folder-collapse-indicator,
+.nav-file-tag,
+.clickable-icon,
+.search-result-file-title,
+.search-result-file-match {
+  color: var(--primary-text-color) !important;
+}
+
+/* Navigation toolbar buttons */
+.nav-buttons-container .clickable-icon,
+.nav-buttons-container .clickable-icon svg,
+.nav-action-button,
+.nav-action-button .clickable-icon,
+.nav-action-button svg,
+.nav-header .nav-buttons-container .clickable-icon,
+.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container .clickable-icon,
+.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container svg,
+.workspace-sidedock-empty .nav-buttons-container .clickable-icon,
+.workspace-sidedock .nav-buttons-container .clickable-icon,
+.workspace-sidedock .nav-buttons-container svg {
+  color: var(--primary-text-color) !important;
+}
+
+/* Navigation toolbar hover effects */
+.nav-buttons-container .clickable-icon:hover,
+.nav-buttons-container .clickable-icon:hover svg,
+.nav-action-button:hover,
+.nav-action-button:hover .clickable-icon,
+.nav-action-button:hover svg {
+  color: var(--accent-color) !important;
+}
+
+/* Active file/folder styling */
+.nav-file-title.is-active {
+  background-color: var(--accent-color) !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+.nav-file-title.is-active .iconize-icon svg,
+.nav-file-title.is-active [data-icon] svg,
+.nav-file-title.is-active:hover .iconize-icon svg,
+.nav-file-title.is-active:hover [data-icon] svg {
+  stroke: rgb(243, 245, 247) !important;
+}
+
+/* Light theme hover effects for non-active items */
+.theme-light .nav-file-title:not(.is-active):hover,
+.theme-light .nav-folder-title:not(.is-active):hover {
+  background-color: rgb(245, 245, 245) !important;
+  color: black !important;
+}
+
+.theme-light .nav-file-title:not(.is-active):hover .nav-file-title-content,
+.theme-light .nav-folder-title:not(.is-active):hover .nav-folder-title-content,
+.theme-light .nav-file-title:not(.is-active):hover span,
+.theme-light .nav-folder-title:not(.is-active):hover span {
+  color: black !important;
+}
+
+/* Sidedock highlight color */
+.workspace-split.mod-horizontal.mod-sidedock.mod-left-split,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split {
+  --nav-item-background-active: var(--accent-active);
+}
+
+/* ========================================
+   WORKSPACE TABS
+   ======================================== */
+
+/* Active tab styling */
+.workspace-tab-header-container .workspace-tab-header.is-active .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header.is-active svg,
+.workspace-tab-header.is-active .workspace-tab-header-inner .clickable-icon {
+  color: var(--primary-text-color) !important;
+}
+
+/* Inactive tab styling */
+.workspace-tab-header-container .workspace-tab-header:not(.is-active) .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active) svg,
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner .clickable-icon {
+  color: var(--secondary-text-color) !important;
+}
+
+/* Tab hover effects */
+.workspace-tab-header-container .workspace-tab-header:hover .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header:hover svg,
+.workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon {
+  color: var(--primary-text-color) !important;
+}
+
+/* ========================================
+   COMMAND PALETTE & SUGGESTIONS
+   ======================================== */
+
+/* Command palette input styling */
+.prompt-input,
+.prompt-input input,
+.modal.mod-command-palette .prompt-input,
+.modal.mod-command-palette .prompt-input input,
+.modal.mod-command-palette input[type="text"] {
+  color: var(--primary-text-color) !important;
+  background-color: transparent !important;
+}
+
+/* Placeholder text */
+.prompt-input input::placeholder,
+.modal.mod-command-palette input::placeholder {
+  color: var(--secondary-text-color) !important;
+}
+
+/* Selected suggestion highlighting */
+.prompt-results .suggestion-item.is-selected,
+.suggestion-container .suggestion-item.is-selected {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.suggestion-item.is-selected .suggestion-title {
+  color: white !important;
+}
+
+.suggestion-item.is-selected .suggestion-note {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Vault switcher and other prompts */
+.prompt,
+.prompt .prompt-results,
+.prompt .prompt-results .suggestion-item,
+.prompt .prompt-results .suggestion-content,
+.modal.mod-switcher,
+.modal.mod-switcher .suggestion-item,
+.modal.mod-switcher .suggestion-content {
+  color: var(--secondary-text-color) !important;
+}
+
+/* ========================================
+   QUERY TOOLBAR MENUS
+   ======================================== */
+
+/* Base query toolbar menu styling */
+.menu.query-toolbar-menu.mod-properties,
+.menu.query-toolbar-menu.mod-properties *,
+.menu.query-toolbar-menu.mod-filters,
+.menu.query-toolbar-menu.mod-filters * {
+  color: rgb(218, 218, 218) !important;
+}
+
+/* Query toolbar menu items */
+.menu.query-toolbar-menu.mod-properties .menu-item,
+.menu.query-toolbar-menu.mod-properties .menu-item-title,
+.menu.query-toolbar-menu.mod-properties .menu-item-icon,
+.menu.query-toolbar-menu.mod-properties .clickable-icon,
+.menu.query-toolbar-menu.mod-filters .menu-item,
+.menu.query-toolbar-menu.mod-filters .menu-item-title,
+.menu.query-toolbar-menu.mod-filters .menu-item-icon,
+.menu.query-toolbar-menu.mod-filters .clickable-icon {
+  color: rgb(218, 218, 218) !important;
+}
+
+/* Selected and hover states */
+.menu.query-toolbar-menu.mod-properties .menu-item.is-selected,
+.menu.query-toolbar-menu.mod-properties .menu-item.is-selected *,
+.menu.query-toolbar-menu.mod-properties .menu-item:hover,
+.menu.query-toolbar-menu.mod-properties .menu-item:hover *,
+.menu.query-toolbar-menu.mod-filters .menu-item.is-selected,
+.menu.query-toolbar-menu.mod-filters .menu-item.is-selected *,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover * {
+  color: var(--primary-text-color) !important;
+  background-color: var(--accent-hover) !important;
+}
+
+/* Hover accent colors */
+.menu.query-toolbar-menu.mod-properties .menu-item:hover .menu-item-title,
+.menu.query-toolbar-menu.mod-properties .menu-item:hover .menu-item-icon,
+.menu.query-toolbar-menu.mod-properties .menu-item:hover .clickable-icon,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover .menu-item-title,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover .menu-item-icon,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover .clickable-icon {
+  color: var(--accent-color) !important;
+}
+
+/* Form controls in query toolbars */
+.menu.query-toolbar-menu.mod-properties input,
+.menu.query-toolbar-menu.mod-properties select,
+.menu.query-toolbar-menu.mod-properties option,
+.menu.query-toolbar-menu.mod-properties textarea,
+.menu.query-toolbar-menu.mod-filters input,
+.menu.query-toolbar-menu.mod-filters select,
+.menu.query-toolbar-menu.mod-filters option,
+.menu.query-toolbar-menu.mod-filters textarea {
+  color: var(--dark-text-color) !important;
+  background-color: var(--dark-background) !important;
+}
+
+/* Specific filter components */
+.menu.query-toolbar-menu.mod-filters .input-row-content,
+.menu.query-toolbar-menu.mod-filters .filter-group-statements,
+.menu.query-toolbar-menu.mod-filters .filter-statement,
+.menu.query-toolbar-menu.mod-filters .filter-group-header,
+.menu.query-toolbar-menu.mod-filters .conjunction.dropdown,
+.menu.query-toolbar-menu.mod-filters .filter-expression.metadata-property {
+  color: var(--dark-text-color) !important;
+}
+
+/* Section content (keep white) */
+.menu.query-toolbar-menu.mod-filters .query-toolbar-section-content,
+.menu.query-toolbar-menu.mod-filters .query-toolbar-section-content * {
+  color: rgb(218, 218, 218) !important;
+}
+
+/* Checkboxes - enabled state */
+.menu.query-toolbar-menu input[type="checkbox"]:checked,
+.menu.query-toolbar-menu .checkbox-container.is-enabled,
+.menu.query-toolbar-menu .is-enabled {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Checkboxes - disabled state */
+.menu.query-toolbar-menu input[type="checkbox"]:not(:checked),
+.menu.query-toolbar-menu .checkbox-container:not(.is-enabled) {
+  background-color: var(--disabled-background) !important;
+  border-color: var(--disabled-border) !important;
+}
+
+/* ========================================
+   EDITOR INTERFACE ICONS
+   ======================================== */
+
+/* Main editor toolbar and interface icons - Black for visibility */
+.workspace-leaf-content .view-header-icon,
+.workspace-leaf-content .clickable-icon,
+.view-action,
+.titlebar-button,
+.mod-root .workspace-leaf-content .view-header .view-actions .clickable-icon,
+.editor-toolbar .clickable-icon,
+.view-header .view-actions .clickable-icon,
+.status-bar .status-bar-item .clickable-icon {
+  color: #000000 !important;
+}
+
+/* ========================================
+   SETTINGS & TOGGLE ITEMS (NON-MODAL)
+   ======================================== */
+
+/* Setting toggle items outside of settings modal - White text */
+.workspace:not(.modal-open) .setting-item.mod-toggle,
+.setting-item.mod-toggle:not(.modal.mod-settings .setting-item.mod-toggle) {
+  color: white !important;
+}
+
+/* Setting item components outside modal */
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-name,
+.setting-item.mod-toggle .setting-item-name:not(.modal.mod-settings .setting-item-name),
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-description,
+.setting-item.mod-toggle .setting-item-description:not(.modal.mod-settings .setting-item-description),
+.workspace:not(.modal-open) .setting-item.mod-toggle label,
+.setting-item.mod-toggle label:not(.modal.mod-settings label),
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-control,
+.setting-item.mod-toggle .setting-item-control:not(.modal.mod-settings .setting-item-control) {
+  color: white !important;
+}
+
+/* ========================================
+   MENU SYSTEM - GENERAL WHITE TEXT
+   ======================================== */
+
+/* Settings menu navigation */
+.vertical-tab-nav-item,
+.vertical-tab-nav-item .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* Modal dialog text */
+.modal .setting-item-name,
+.modal .setting-item-description,
+.modal .modal-title,
+.modal-content {
+  color: white !important;
+}
+
+/* Search suggestions */
+.search-suggest-item,
+.search-suggest-item .search-suggest-item-text {
+  color: white !important;
+}
+
+/* Graph view controls */
+.graph-controls .setting-item-name,
+.graph-controls .setting-item-description {
+  color: white !important;
+}
+
+/* Vault switcher */
+.vault-switcher .vault-switcher-item,
+.vault-switcher .vault-switcher-item-name {
+  color: white !important;
+}
+
+/* Quick switcher */
+.prompt .prompt-instruction,
+.prompt-input-container input {
+  color: white !important;
+}
+
+/* Search results count */
+.workspace-leaf-content[data-type="search"] .clickable-icon.search-results-result-count,
+.workspace-leaf-content[data-type="search"] .clickable-icon.search-results-result-count span {
+  color: white !important;
+}
+
+/* Search results content - Black for readability */
+.search-result-container .tree-item.search-result,
+.search-result-container .search-result-file-title,
+.search-result-container .search-result-file-matches,
+.search-result-container .search-result-file-match {
+  color: black !important;
+}
+
+/* General menu items */
+.menu-item-icon+*,
+.menu-separator+.menu-item {
+  color: white !important;
+}
+
+/* ========================================
+   PROPERTIES BOX STYLING
+   ======================================== */
+
+/* Base properties container */
+.metadata-container {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+/* Theme-specific properties styling */
+.theme-dark .metadata-container {
+  background-color: var(--properties-background-dark);
+  border-color: var(--background-modifier-border-hover);
+}
+
+.theme-light .metadata-container {
+  background-color: var(--properties-background-light);
+  border-color: var(--background-modifier-border);
+}
+
+/* ========================================
+   CODE BLOCKS & INLINE CODE
+   ======================================== */
+
+/* Rounded corners for all themes */
+.theme-light,
+.theme-dark {
+
+  /* Code block borders */
+  .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+  }
+
+  .cm-s-obsidian div.HyperMD-codeblock-end-bg {
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+  }
+
+  /* Preview mode code blocks */
+  .markdown-preview-view pre {
+    border-radius: 8px !important;
+  }
+
+  /* Inline code */
+  .markdown-preview-view code,
+  .cm-s-obsidian span.cm-inline-code {
+    border-radius: 6px !important;
+  }
+}
+
+/* Light theme code colors */
+.theme-light {
+
+  .markdown-preview-view pre[class*="language-"],
+  .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+  .markdown-preview-view code,
+  .markdown-rendered code,
+  .cm-s-obsidian span.cm-inline-code {
+    background-color: var(--code-background-light) !important;
+  }
+}
+
+/* Dark theme code colors */
+.theme-dark {
+
+  .markdown-preview-view pre[class*="language-"],
+  .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+  .markdown-preview-view code,
+  .markdown-rendered code,
+  .cm-s-obsidian span.cm-inline-code {
+    background-color: var(--code-background-dark) !important;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* General utility classes for consistent theming */
+.theme-dark-text {
+  color: var(--primary-text-color) !important;
+}
+
+.theme-light-text {
+  color: var(--dark-text-color) !important;
+}
+
+.theme-accent {
+  color: var(--accent-color) !important;
+}
