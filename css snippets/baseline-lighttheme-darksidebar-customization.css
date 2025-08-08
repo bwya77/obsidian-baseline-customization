@@ -172,6 +172,78 @@
 }
 
 /* ========================================
+   RIGHT SIDEDOCK HOVER FIXES
+   ======================================== */
+
+/* Right sidedock navigation items hover */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .clickable-icon:hover {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock navigation text elements on hover */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title:hover .nav-file-title-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title:hover .nav-folder-title-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title:hover span,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title:hover span,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self:hover .tree-item-inner {
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock icons hover */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .clickable-icon:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .clickable-icon:hover svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover .clickable-icon,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover svg {
+  color: var(--accent-color) !important;
+  stroke: var(--accent-color) !important;
+}
+
+/* Right sidedock menu items hover */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .menu-item:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .menu-item:hover *,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .search-result:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .search-result:hover * {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock selected/active items */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self.is-active,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .menu-item.is-selected,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .search-result.is-selected {
+  background-color: var(--accent-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock selected/active text elements */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active .nav-file-title-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active .nav-folder-title-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active span,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active span,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self.is-active .tree-item-inner,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .menu-item.is-selected *,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .search-result.is-selected * {
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock selected/active icons */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active .iconize-icon svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active [data-icon] svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active .iconize-icon svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active [data-icon] svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self.is-active .clickable-icon svg {
+  stroke: var(--primary-text-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* ========================================
    WORKSPACE TABS
    ======================================== */
 
@@ -194,6 +266,91 @@
 .workspace-tab-header-container .workspace-tab-header:hover svg,
 .workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon {
   color: var(--primary-text-color) !important;
+}
+
+/* ========================================
+   WORKSPACE TAB HEADER CONTAINER ICONS FIX
+   ======================================== */
+
+/* Target all icons in tab headers - force white color */
+.workspace-tab-header-container .clickable-icon,
+.workspace-tab-header-container .clickable-icon svg,
+.workspace-tab-header-container .view-action,
+.workspace-tab-header-container .view-action svg,
+.workspace-tab-header-container .workspace-tab-header .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header .clickable-icon svg,
+.workspace-tab-header .clickable-icon,
+.workspace-tab-header .clickable-icon svg,
+.workspace-tab-header .view-action,
+.workspace-tab-header .view-action svg,
+.workspace-tab-header-inner .clickable-icon,
+.workspace-tab-header-inner .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Hover effects for tab header icons */
+.workspace-tab-header-container .clickable-icon:hover,
+.workspace-tab-header-container .clickable-icon:hover svg,
+.workspace-tab-header-container .view-action:hover,
+.workspace-tab-header-container .view-action:hover svg,
+.workspace-tab-header-container .workspace-tab-header .clickable-icon:hover,
+.workspace-tab-header-container .workspace-tab-header .clickable-icon:hover svg,
+.workspace-tab-header .clickable-icon:hover,
+.workspace-tab-header .clickable-icon:hover svg,
+.workspace-tab-header .view-action:hover,
+.workspace-tab-header .view-action:hover svg,
+.workspace-tab-header-inner .clickable-icon:hover,
+.workspace-tab-header-inner .clickable-icon:hover svg {
+  color: var(--accent-color) !important;
+  stroke: var(--accent-color) !important;
+}
+
+/* Override any existing tab header specific rules */
+.workspace-tab-header-container .workspace-tab-header.is-active .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header.is-active svg,
+.workspace-tab-header.is-active .workspace-tab-header-inner .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active) .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active) svg,
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner .clickable-icon {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Ensure hover works on both active and inactive tabs */
+.workspace-tab-header-container .workspace-tab-header:hover .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header:hover svg,
+.workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon {
+  color: var(--accent-color) !important;
+  stroke: var(--accent-color) !important;
+}
+
+/* ========================================
+   WORKSPACE DRAWER VAULT ACTIONS FIX
+   ======================================== */
+
+/* Target vault actions drawer icons - force white color */
+.workspace-drawer-vault-actions .clickable-icon,
+.workspace-drawer-vault-actions .clickable-icon svg,
+.workspace-drawer-vault-actions .nav-action-button,
+.workspace-drawer-vault-actions .nav-action-button .clickable-icon,
+.workspace-drawer-vault-actions .nav-action-button svg,
+.workspace-drawer .workspace-drawer-vault-actions .clickable-icon,
+.workspace-drawer .workspace-drawer-vault-actions .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Hover effects for vault actions drawer icons */
+.workspace-drawer-vault-actions .clickable-icon:hover,
+.workspace-drawer-vault-actions .clickable-icon:hover svg,
+.workspace-drawer-vault-actions .nav-action-button:hover,
+.workspace-drawer-vault-actions .nav-action-button:hover .clickable-icon,
+.workspace-drawer-vault-actions .nav-action-button:hover svg,
+.workspace-drawer .workspace-drawer-vault-actions .clickable-icon:hover,
+.workspace-drawer .workspace-drawer-vault-actions .clickable-icon:hover svg {
+  color: var(--accent-color) !important;
+  stroke: var(--accent-color) !important;
 }
 
 /* ========================================
@@ -504,6 +661,7 @@
 .modal.mod-settings .vertical-tab-header-group .search-input-clear-button * {
   color: black !important;
 }
+
 /* Vertical tab header group text - WHITE TEXT */
 .modal.mod-settings .vertical-tab-header-group,
 .modal.mod-settings .vertical-tab-header-group * {
