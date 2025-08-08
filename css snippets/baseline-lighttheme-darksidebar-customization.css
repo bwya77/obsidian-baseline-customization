@@ -22,9 +22,10 @@
   --light-background: #ffffff;
   --dark-background: #f5f5f5;
   --code-background-light: rgb(243, 245, 247);
-  --code-background-dark: rgb(27, 32, 37);
+  --code-background-dark: rgb(28, 33, 40);
   --properties-background-light: rgb(243, 245, 247);
-  --properties-background-dark: rgb(50, 50, 50);
+  --properties-background-dark: rgb(28, 33, 40);
+  --hover-color: rgba(45, 52, 62);
 
   /* Form Controls */
   --disabled-background: #e0e0e0;
@@ -153,15 +154,15 @@
 /* Light theme hover effects for non-active items */
 .theme-light .nav-file-title:not(.is-active):hover,
 .theme-light .nav-folder-title:not(.is-active):hover {
-  background-color: rgb(245, 245, 245) !important;
-  color: black !important;
+  background-color: var(--hover-color) !important;
+  color: white !important;
 }
 
 .theme-light .nav-file-title:not(.is-active):hover .nav-file-title-content,
 .theme-light .nav-folder-title:not(.is-active):hover .nav-folder-title-content,
 .theme-light .nav-file-title:not(.is-active):hover span,
 .theme-light .nav-folder-title:not(.is-active):hover span {
-  color: black !important;
+  color: white !important;
 }
 
 /* Sidedock highlight color */
@@ -265,7 +266,7 @@
   color: rgb(218, 218, 218) !important;
 }
 
-/* Selected and hover states */
+/* Selected and hover states - FIXED TO USE --hover-color */
 .menu.query-toolbar-menu.mod-properties .menu-item.is-selected,
 .menu.query-toolbar-menu.mod-properties .menu-item.is-selected *,
 .menu.query-toolbar-menu.mod-properties .menu-item:hover,
@@ -275,7 +276,7 @@
 .menu.query-toolbar-menu.mod-filters .menu-item:hover,
 .menu.query-toolbar-menu.mod-filters .menu-item:hover * {
   color: var(--primary-text-color) !important;
-  background-color: var(--accent-hover) !important;
+  background-color: var(--hover-color) !important;
 }
 
 /* Hover accent colors */
@@ -434,6 +435,121 @@
 }
 
 /* ========================================
+   CONTEXT MENU HOVER STYLING - FIXED
+   Using --hover-color consistently
+   ======================================== */
+
+/* General context menu items - FIXED TO USE --hover-color */
+.menu .menu-item:hover,
+.menu .menu-item:hover *,
+.menu .menu-item.is-selected,
+.menu .menu-item.is-selected * {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Context menu item components on hover */
+.menu .menu-item:hover .menu-item-title,
+.menu .menu-item:hover .menu-item-icon,
+.menu .menu-item:hover .clickable-icon,
+.menu .menu-item:hover svg,
+.menu .menu-item.is-selected .menu-item-title,
+.menu .menu-item.is-selected .menu-item-icon,
+.menu .menu-item.is-selected .clickable-icon,
+.menu .menu-item.is-selected svg {
+  color: var(--primary-text-color) !important;
+}
+
+/* Specific context menu types */
+.context-menu .menu-item:hover,
+.context-menu .menu-item:hover *,
+.file-menu .menu-item:hover,
+.file-menu .menu-item:hover *,
+.workspace-leaf-content .menu .menu-item:hover,
+.workspace-leaf-content .menu .menu-item:hover * {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Right-click context menus */
+.menu.mod-context .menu-item:hover,
+.menu.mod-context .menu-item:hover *,
+.menu.mod-context .menu-item.is-selected,
+.menu.mod-context .menu-item.is-selected * {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Override any existing hover styles that might conflict */
+.menu .menu-item:hover .menu-item-title,
+.menu .menu-item:hover .menu-item-icon,
+.menu .menu-item:hover .clickable-icon {
+  color: var(--primary-text-color) !important;
+}
+
+/* Ensure submenu indicators are also consistent on hover */
+.menu .menu-item:hover .menu-item-submenu-indicator,
+.menu .menu-item.is-selected .menu-item-submenu-indicator {
+  color: var(--primary-text-color) !important;
+}
+
+/* ========================================
+   VERTICAL TAB HEADERS - CUSTOM STYLING
+   ======================================== */
+
+/* Vertical tab header group text - WHITE TEXT */
+.modal.mod-settings .vertical-tab-header-group,
+.modal.mod-settings .vertical-tab-header-group * {
+  color: white !important;
+}
+
+/* Target only the actual vertical tab headers in settings */
+.modal.mod-settings .vertical-tab-header {
+  background-color: rgb(28, 33, 40) !important;
+  padding: 10px !important;
+  color: white !important;
+}
+
+/* Target the nav items within vertical tab headers */
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item {
+  background-color: rgb(28, 33, 40) !important;
+  color: white !important;
+}
+
+/* Target the text titles specifically - WHITE TEXT */
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* Hover state - FIXED TO USE --hover-color */
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item:hover {
+  background-color: var(--hover-color) !important;
+  color: white !important;
+}
+
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item:hover .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* Selected/active state */
+.modal.mod-settings .vertical-tab-header.is-active,
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item.is-active {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.modal.mod-settings .vertical-tab-header.is-active .vertical-tab-nav-item-title,
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item.is-active .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* Fix the grey text issue - override the general menu rule */
+.modal.mod-settings .vertical-tab-nav-item,
+.modal.mod-settings .vertical-tab-nav-item .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* ========================================
    PROPERTIES BOX STYLING
    ======================================== */
 
@@ -527,65 +643,4 @@
 
 .theme-accent {
   color: var(--accent-color) !important;
-}
-
-
-
-/* ========================================
-   CONTEXT MENU HOVER STYLING
-   White background with black text on hover
-   ======================================== */
-
-/* General context menu items */
-.menu .menu-item:hover,
-.menu .menu-item:hover *,
-.menu .menu-item.is-selected,
-.menu .menu-item.is-selected * {
-  background-color: white !important;
-  color: black !important;
-}
-
-/* Context menu item components on hover */
-.menu .menu-item:hover .menu-item-title,
-.menu .menu-item:hover .menu-item-icon,
-.menu .menu-item:hover .clickable-icon,
-.menu .menu-item:hover svg,
-.menu .menu-item.is-selected .menu-item-title,
-.menu .menu-item.is-selected .menu-item-icon,
-.menu .menu-item.is-selected .clickable-icon,
-.menu .menu-item.is-selected svg {
-  color: black !important;
-}
-
-/* Specific context menu types */
-.context-menu .menu-item:hover,
-.context-menu .menu-item:hover *,
-.file-menu .menu-item:hover,
-.file-menu .menu-item:hover *,
-.workspace-leaf-content .menu .menu-item:hover,
-.workspace-leaf-content .menu .menu-item:hover * {
-  background-color: white !important;
-  color: black !important;
-}
-
-/* Right-click context menus */
-.menu.mod-context .menu-item:hover,
-.menu.mod-context .menu-item:hover *,
-.menu.mod-context .menu-item.is-selected,
-.menu.mod-context .menu-item.is-selected * {
-  background-color: white !important;
-  color: black !important;
-}
-
-/* Override any existing hover styles that might conflict */
-.menu .menu-item:hover .menu-item-title,
-.menu .menu-item:hover .menu-item-icon,
-.menu .menu-item:hover .clickable-icon {
-  color: black !important;
-}
-
-/* Ensure submenu indicators are also black on hover */
-.menu .menu-item:hover .menu-item-submenu-indicator,
-.menu .menu-item.is-selected .menu-item-submenu-indicator {
-  color: black !important;
 }
