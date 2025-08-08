@@ -528,3 +528,64 @@
 .theme-accent {
   color: var(--accent-color) !important;
 }
+
+
+
+/* ========================================
+   CONTEXT MENU HOVER STYLING
+   White background with black text on hover
+   ======================================== */
+
+/* General context menu items */
+.menu .menu-item:hover,
+.menu .menu-item:hover *,
+.menu .menu-item.is-selected,
+.menu .menu-item.is-selected * {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Context menu item components on hover */
+.menu .menu-item:hover .menu-item-title,
+.menu .menu-item:hover .menu-item-icon,
+.menu .menu-item:hover .clickable-icon,
+.menu .menu-item:hover svg,
+.menu .menu-item.is-selected .menu-item-title,
+.menu .menu-item.is-selected .menu-item-icon,
+.menu .menu-item.is-selected .clickable-icon,
+.menu .menu-item.is-selected svg {
+  color: black !important;
+}
+
+/* Specific context menu types */
+.context-menu .menu-item:hover,
+.context-menu .menu-item:hover *,
+.file-menu .menu-item:hover,
+.file-menu .menu-item:hover *,
+.workspace-leaf-content .menu .menu-item:hover,
+.workspace-leaf-content .menu .menu-item:hover * {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Right-click context menus */
+.menu.mod-context .menu-item:hover,
+.menu.mod-context .menu-item:hover *,
+.menu.mod-context .menu-item.is-selected,
+.menu.mod-context .menu-item.is-selected * {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Override any existing hover styles that might conflict */
+.menu .menu-item:hover .menu-item-title,
+.menu .menu-item:hover .menu-item-icon,
+.menu .menu-item:hover .clickable-icon {
+  color: black !important;
+}
+
+/* Ensure submenu indicators are also black on hover */
+.menu .menu-item:hover .menu-item-submenu-indicator,
+.menu .menu-item.is-selected .menu-item-submenu-indicator {
+  color: black !important;
+}
