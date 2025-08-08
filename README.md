@@ -10,7 +10,8 @@ This repository contains my customizations for the Obsidian Baseline theme. Foll
 - Open Obsidian Settings
 - Go to Appearance → Themes
 - Search for and install "Baseline" theme
-- Enable the Baseline theme
+- Enable the Baseline theme and set it as your active theme
+- Make sure the theme is set to **Light** mode
 
 ### 2. Configure Fonts
 - In Appearance settings, set:
