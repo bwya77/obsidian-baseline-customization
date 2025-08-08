@@ -305,7 +305,7 @@
   color: var(--primary-text-color) !important;
 }
 
-//* ========================================
+/* ========================================
    WORKSPACE TABS - MODIFIED TO EXCLUDE MAIN EDITOR
    ======================================== */
 
@@ -323,10 +323,10 @@
   color: var(--secondary-text-color) !important;
 }
 
-/* Tab hover effects - WHITE ICONS with BACKGROUND - EXCLUDE MAIN EDITOR */
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover .clickable-icon,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover svg,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon {
+/* Tab hover effects - WHITE ICONS with BACKGROUND - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner .clickable-icon {
   color: var(--primary-text-color) !important;
   background-color: var(--hover-color) !important;
   border-radius: 4px !important;
@@ -361,30 +361,30 @@
   stroke: var(--primary-text-color) !important;
 }
 
-/* Hover effects for entire tab header area - EXPANDED HOVER AREA - EXCLUDE MAIN EDITOR */
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover {
+/* Hover effects for entire tab header area - EXPANDED HOVER AREA - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover {
   background-color: var(--hover-color) !important;
   border-radius: 4px !important;
 }
 
-/* Keep icons white on tab header hover - EXCLUDE MAIN EDITOR */
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .clickable-icon,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .clickable-icon svg,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .view-action,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .view-action svg,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:hover .workspace-tab-header-inner .clickable-icon svg,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover .clickable-icon,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:hover .clickable-icon svg {
+/* Keep icons white on tab header hover - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .clickable-icon svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .view-action,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .view-action svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner .clickable-icon svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .clickable-icon svg {
   color: var(--primary-text-color) !important;
   stroke: var(--primary-text-color) !important;
 }
 
-/* Specific hover for individual clickable icons within tabs - EXCLUDE MAIN EDITOR */
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .clickable-icon:hover,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .view-action:hover,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-inner .clickable-icon:hover {
+/* Specific hover for individual clickable icons within tabs - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .clickable-icon:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .view-action:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-inner:not(.is-active) .clickable-icon:hover {
   color: var(--primary-text-color) !important;
   stroke: var(--primary-text-color) !important;
   background-color: var(--hover-color) !important;
@@ -392,10 +392,10 @@
   padding: 2px !important;
 }
 
-/* Specific hover for SVG elements inside tab headers - EXCLUDE MAIN EDITOR */
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .clickable-icon:hover svg,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .view-action:hover svg,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-inner .clickable-icon:hover svg {
+/* Specific hover for SVG elements inside tab headers - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .clickable-icon:hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .view-action:hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-inner:not(.is-active) .clickable-icon:hover svg {
   color: var(--primary-text-color) !important;
   stroke: var(--primary-text-color) !important;
 }
@@ -411,9 +411,9 @@
   stroke: var(--primary-text-color) !important;
 }
 
-/* Ensure hover works on both active and inactive tabs - FULL TAB AREA - EXCLUDE MAIN EDITOR */
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header .clickable-icon:hover,
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header .workspace-tab-header-inner .clickable-icon:hover {
+/* Ensure hover works on both active and inactive tabs - FULL TAB AREA - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active) .clickable-icon:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner .clickable-icon:hover {
   color: var(--primary-text-color) !important;
   stroke: var(--primary-text-color) !important;
   background-color: var(--hover-color) !important;
@@ -422,7 +422,6 @@
   min-width: 24px !important;
   min-height: 24px !important;
 }
-
 
 /* ========================================
    NEW TAB BUTTON HOVER - INCLUDE IN MAIN EDITOR
@@ -930,4 +929,13 @@
 
 .theme-accent {
   color: var(--accent-color) !important;
+}
+
+
+/* ========================================
+   WORKSPACE TAB HEADER TAPPABLE - COMPREHENSIVE FIX
+   ======================================== */
+
+.workspace-tab-header.tappable:not(.is-active):hover {
+  background-color: var(--hover-color) !important;
 }
