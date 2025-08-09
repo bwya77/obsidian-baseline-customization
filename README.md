@@ -4,7 +4,7 @@
 
 This repository contains my customizations for the Obsidian Baseline theme. Follow the setup instructions below to configure your Obsidian vault with these customizations.
 
-> I have NOT tested any of these customizations for mobile devices. They are designed for desktop use only.
+> You can now just select "Admin" them in style settings after setting Baseline as your theme. I will leave my CSS snippet here as there are some additional customizations that I have, and will continue to make. 
 
 ## Setup Instructions
 
