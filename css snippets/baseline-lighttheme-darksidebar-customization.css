@@ -962,3 +962,88 @@
   background-color: var(--accent-color) !important;
   color: white !important;
 }
+
+
+/* ========================================
+   COMMUNITY MODAL DETAILS FIX
+   Add to your existing CSS file
+   ======================================== */
+
+/* Add community-modal-details to your existing modal background selectors */
+.modal.mod-settings .modal-content,
+.modal-container.mod-confirmation .modal,
+.modal-container.mod-confirmation .modal-content,
+.modal-container.mod-confirmation .modal-bg,
+.modal-container.mod-confirmation .modal-header,
+.modal-container.mod-confirmation .modal-button-container,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .modal-content,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .modal-container,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .community-modal-content,
+.community-modal-details {
+  background-color: var(--light-background) !important;
+  color: var(--dark-text-color) !important;
+}
+
+/* Specific styling for community modal details */
+.community-modal-details,
+.community-modal-details * {
+  background-color: var(--light-background) !important;
+  color: var(--dark-text-color) !important;
+}
+
+/* Community modal details text elements */
+.community-modal-details h1,
+.community-modal-details h2,
+.community-modal-details h3,
+.community-modal-details h4,
+.community-modal-details h5,
+.community-modal-details h6,
+.community-modal-details p,
+.community-modal-details span,
+.community-modal-details div,
+.community-modal-details label,
+.community-modal-details a,
+.community-modal-details .community-modal-info,
+.community-modal-details .community-modal-description {
+  color: var(--dark-text-color) !important;
+}
+
+/* Community modal search results wrapper */
+.community-modal-search-results-wrapper,
+.community-modal-search-results-wrapper * {
+  background-color: var(--light-background) !important;
+  color: var(--dark-text-color) !important;
+}
+
+/* Community item names and descriptions */
+.community-item-name,
+.community-item-desc,
+.community-modal-search-results-wrapper .community-item-name,
+.community-modal-search-results-wrapper .community-item-desc {
+  color: var(--dark-text-color) !important;
+}
+
+/* All text elements in community search results */
+.community-modal-search-results-wrapper h1,
+.community-modal-search-results-wrapper h2,
+.community-modal-search-results-wrapper h3,
+.community-modal-search-results-wrapper h4,
+.community-modal-search-results-wrapper h5,
+.community-modal-search-results-wrapper h6,
+.community-modal-search-results-wrapper p,
+.community-modal-search-results-wrapper span,
+.community-modal-search-results-wrapper div,
+.community-modal-search-results-wrapper label,
+.community-modal-search-results-wrapper a {
+  color: var(--dark-text-color) !important;
+}
+
+/* Bold styling for "Installed" text */
+.flair.mod-pop,
+.community-item .flair.mod-pop,
+.community-modal-search-results-wrapper .flair.mod-pop,
+span.flair.mod-pop {
+  font-weight: bold !important;
+  color: var(--dark-text-color) !important;
+}
