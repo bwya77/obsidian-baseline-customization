@@ -475,7 +475,7 @@
 }
 
 /* ========================================
-   COMMAND PALETTE & SUGGESTIONS
+   COMMAND PALETTE & SUGGESTIONS - FIXED
    ======================================== */
 
 /* Command palette input styling */
@@ -494,6 +494,18 @@
   color: var(--secondary-text-color) !important;
 }
 
+/* FIXED: Vault switcher and other prompts - WHITE TEXT */
+.prompt,
+.prompt .prompt-results,
+.prompt .prompt-results .suggestion-item,
+.prompt .prompt-results .suggestion-content,
+.modal.mod-switcher,
+.modal.mod-switcher .suggestion-item,
+.modal.mod-switcher .suggestion-content {
+  color: var(--primary-text-color) !important;
+  /* Changed from secondary to primary */
+}
+
 /* Selected suggestion highlighting */
 .prompt-results .suggestion-item.is-selected,
 .suggestion-container .suggestion-item.is-selected {
@@ -506,19 +518,10 @@
 }
 
 .suggestion-item.is-selected .suggestion-note {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-/* Vault switcher and other prompts */
-.prompt,
-.prompt .prompt-results,
-.prompt .prompt-results .suggestion-item,
-.prompt .prompt-results .suggestion-content,
-.modal.mod-switcher,
-.modal.mod-switcher .suggestion-item,
-.modal.mod-switcher .suggestion-content {
-  color: var(--secondary-text-color) !important;
-}
+  color: rgba(255,
+    255,
+    255,
+    0.8) !important;
 
 /* ========================================
    QUERY TOOLBAR MENUS
