@@ -475,9 +475,41 @@
 }
 
 /* ========================================
-   COMMAND PALETTE & SUGGESTIONS - FIXED
+   COMMAND PALETTE & SUGGESTIONS
    ======================================== */
 
+/* Command palette input styling */
+.prompt-input,
+.prompt-input input,
+.modal.mod-command-palette .prompt-input,
+.modal.mod-command-palette .prompt-input input,
+.modal.mod-command-palette input[type="text"] {
+  color: var(--primary-text-color) !important;
+  background-color: transparent !important;
+}
+
+/* Placeholder text */
+.prompt-input input::placeholder,
+.modal.mod-command-palette input::placeholder {
+  color: var(--secondary-text-color) !important;
+}
+
+/* Selected suggestion highlighting */
+.prompt-results .suggestion-item.is-selected,
+.suggestion-container .suggestion-item.is-selected {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.suggestion-item.is-selected .suggestion-title {
+  color: white !important;
+}
+
+.suggestion-item.is-selected .suggestion-note {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Vault switcher and other prompts */
 /* Command palette input styling */
 .prompt-input,
 .prompt-input input,
@@ -518,10 +550,8 @@
 }
 
 .suggestion-item.is-selected .suggestion-note {
-  color: rgba(255,
-    255,
-    255,
-    0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
 
 /* ========================================
    QUERY TOOLBAR MENUS
