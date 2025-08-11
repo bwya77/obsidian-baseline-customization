@@ -1047,3 +1047,15 @@ span.flair.mod-pop {
   font-weight: bold !important;
   color: var(--dark-text-color) !important;
 }
+
+
+
+/* Also target headings in reading view if needed */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  color: rgb(29, 33, 39) !important;
+}
