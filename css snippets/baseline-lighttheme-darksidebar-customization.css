@@ -1110,3 +1110,43 @@ div.modal.mod-narrow div.setting-item-name {
 .menu.query-toolbar-menu.mod-filters .query-toolbar-section-content * {
   color: rgb(172, 172, 172) !important;
 }
+
+
+/* ========================================
+   BASES
+   ======================================== */
+/* Make text and icons white in query toolbar menu */
+.menu.query-toolbar-menu {
+  color: var(--primary-text-color);
+}
+
+/* White text for all menu items */
+.bases-toolbar-menu-item-name,
+.modal-title,
+.modal-cta-button,
+.bases-toolbar-menu-form .input-row .input-row-label {
+  color: var(--primary-text-color) !important;
+}
+
+/* White icons - targets SVG stroke color */
+.bases-toolbar-menu-item-info-icon svg,
+.bases-toolbar-menu-item-icon svg,
+.search-input-clear-button svg {
+  stroke: var(--primary-text-color) !important;
+}
+
+/* White search input text and placeholder */
+.search-input-container input {
+  color: var(--primary-text-color) !important;
+}
+
+.search-input-container input::placeholder {
+  color: var(--primary-text-color) !important;
+
+  /* Slightly transparent for placeholder effect */
+}
+
+/* White clear button */
+.search-input-clear-button {
+  color: var(--primary-text-color) !important;
+}
