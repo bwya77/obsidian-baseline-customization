@@ -1092,3 +1092,15 @@ span.flair.mod-pop {
 .markdown-preview-view h6 {
   color: rgb(29, 33, 39) !important;
 }
+
+/* ========================================
+   MODAL MOD-NARROW SETTING-ITEM-NAME BLACK - Export to PDF
+   ======================================== */
+
+/* Ultra-specific targeting to override any existing white text rules */
+.modal-container.mod-confirmation .modal.mod-narrow .modal-content .setting-item .setting-item-name,
+.modal-container .modal.mod-narrow .modal-content .setting-item .setting-item-name,
+.modal.mod-narrow .modal-content .setting-item .setting-item-name,
+div.modal.mod-narrow div.setting-item-name {
+  color: var(--dark-text-color) !important;
+}
