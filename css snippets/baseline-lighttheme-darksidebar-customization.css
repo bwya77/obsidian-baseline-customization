@@ -1104,3 +1104,9 @@ span.flair.mod-pop {
 div.modal.mod-narrow div.setting-item-name {
   color: var(--dark-text-color) !important;
 }
+
+
+.menu.query-toolbar-menu.mod-filters .query-toolbar-section-content,
+.menu.query-toolbar-menu.mod-filters .query-toolbar-section-content * {
+  color: rgb(172, 172, 172) !important;
+}
