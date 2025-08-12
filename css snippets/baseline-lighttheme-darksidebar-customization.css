@@ -332,13 +332,6 @@
   border-radius: 4px !important;
 }
 
-/* Show close icon with barely red background on active tabs - only on hover - EXCLUDE MAIN EDITOR */
-.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header.is-active:hover .workspace-tab-header-inner-close-button {
-  opacity: 1 !important;
-  visibility: visible !important;
-  background-color: rgb(230, 230, 230) !important;
-  border-radius: 50% !important;
-}
 
 /* ========================================
    WORKSPACE TAB HEADER CONTAINER ICONS FIX - EXCLUDE MAIN EDITOR
@@ -1150,3 +1143,63 @@ div.modal.mod-narrow div.setting-item-name {
 .search-input-clear-button {
   color: var(--primary-text-color) !important;
 }
+
+
+
+.search-input-container input {
+  color: rgb(149, 149, 149) !important;
+}
+
+
+
+
+/* Obsidian Close Button Styling */
+/* Obsidian Close Button Styling - High Specificity */
+
+
+
+/* ========================================
+   TABS
+   ======================================== */
+.workspace-tab-header.is-active .workspace-tab-header-inner .workspace-tab-header-inner-close-button:hover,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button:hover,
+.workspace-tab-header.is-active .workspace-tab-header-status-icon.mod-pinned:hover {
+  background-color: rgba(136, 136, 136, 0.25) !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+}
+
+/* Pin icon - black for active tabs */
+.workspace-tab-header-status-icon.mod-pinned svg path {
+  stroke: var(--dark-text-color) !important;
+  fill: none !important;
+}
+
+/* Pin icon - white for inactive tabs */
+.workspace-tab-header:not(.is-active) .workspace-tab-header-status-icon.mod-pinned svg path {
+  stroke: #ffffff !important;
+  fill: none !important;
+}
+
+
+/* ========================================
+   MENU-SCROLL ICON COLORS
+   ======================================== */
+/* Default icon colors in menu-scroll */
+.menu-scroll .menu-item-icon,
+.menu-scroll .menu-item-icon svg,
+.menu-scroll .svg-icon {
+  color: rgb(199, 199, 199) !important;
+}
+/* Warning items (Delete button) - RED */
+.menu-scroll .menu-item.is-warning .menu-item-icon,
+.menu-scroll .menu-item.is-warning .menu-item-icon svg,
+.menu-scroll .menu-item.is-warning .svg-icon {
+  color: red !important;
+}
+
