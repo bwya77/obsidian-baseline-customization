@@ -481,6 +481,12 @@
   background-color: transparent !important;
 }
 
+/* Override any conflicting rules for command palette input */
+.prompt-input-container input,
+.prompt-input-container textarea {
+  color: var(--primary-text-color) !important;
+}
+
 /* Placeholder text */
 .prompt-input input::placeholder,
 .modal.mod-command-palette input::placeholder {
@@ -717,6 +723,8 @@
 .prompt-input-container input {
   color: white !important;
 }
+
+/* Removed conflicting black text color for command palette input */
 
 /* Search results count */
 .workspace-leaf-content[data-type="search"] .clickable-icon.search-results-result-count,
@@ -1121,6 +1129,24 @@ div.modal.mod-narrow div.setting-item-name {
   color: var(--primary-text-color) !important;
 }
 
+/* Rounded corners for bases-thead - top only */
+.bases-thead {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Rounded corners for bases-tbody - bottom only */
+.bases-tbody {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  overflow: hidden !important;
+}
+
 /* White icons - targets SVG stroke color */
 .bases-toolbar-menu-item-info-icon svg,
 .bases-toolbar-menu-item-icon svg,
@@ -1188,7 +1214,7 @@ div.modal.mod-narrow div.setting-item-name {
 
 
 /* ========================================
-   MENU-SCROLL ICON COLORS
+   MENU-SCROLL ICON COLORS - Sort, Filter buttons for BASES
    ======================================== */
 /* Default icon colors in menu-scroll */
 .menu-scroll .menu-item-icon,
@@ -1203,3 +1229,101 @@ div.modal.mod-narrow div.setting-item-name {
   color: red !important;
 }
 
+.text-icon-button.is-active {
+  color: #5c5c5c;
+}
+
+.text-icon-button.is-active:hover {
+  color: black;
+  background-color: rgb(238, 238, 238);
+}
+
+.text-icon-button.is-active:hover .text-button-icon,
+.text-icon-button.is-active:hover .text-button-icon svg {
+  color: #5c5c5c;
+  stroke: #5c5c5c;
+}
+
+
+
+
+
+
+
+
+
+
+/* White Modal Background and Padding */
+.modal {
+  background-color: white !important;
+}
+
+[id^="react-aria"][id*=":r"] {
+  background-color: white !important;
+  color: #2e3338 !important;
+}
+
+
+
+
+.modal.mod-sync-log .sync-log-container,
+.modal.mod-sync-log .sync-log-container * {
+  color: white !important;
+}
+
+
+.modal.mod-lg * {
+  color: black !important;
+}
+
+
+
+
+
+
+
+
+/* Keep tree items in graph controls black */
+.graph-controls .tree-item-inner,
+.graph-controls .tree-item-self,
+.tree-item.graph-control-section.mod-display,
+.tree-item.graph-control-section.mod-display *,
+.tree-item-children .setting-item,
+.tree-item-children .setting-item *,
+.setting-item-name,
+.setting-item-description {
+  color: black !important;
+}
+
+
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-name,
+.setting-item.mod-toggle .setting-item-name:not(.modal.mod-settings .setting-item-name),
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-description,
+.setting-item.mod-toggle .setting-item-description:not(.modal.mod-settings .setting-item-description),
+.workspace:not(.modal-open) .setting-item.mod-toggle label,
+.setting-item.mod-toggle label:not(.modal.mod-settings label),
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-control,
+.setting-item.mod-toggle .setting-item-control:not(.modal.mod-settings .setting-item-control) {
+  color: black !important;
+}
+
+.workspace-split:not(.mod-root) .graph-controls.is-close {
+  background-color: white;
+}
+
+
+
+.graph-view.color-fill {
+  color: var(--accent-color);
+}
+.graph-view.color-text {
+  color: #ffffff;
+}
+
+.graph-view.color-fill-highlight {
+  color: #26798c;
+}
+
+.graph-view.color-line-highlight {
+  color: #5d94d2;
+}
