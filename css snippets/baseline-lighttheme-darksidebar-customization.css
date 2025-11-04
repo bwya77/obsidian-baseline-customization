@@ -1327,3 +1327,148 @@ div.modal.mod-narrow div.setting-item-name {
 .graph-view.color-line-highlight {
   color: #5d94d2;
 }
+
+
+
+
+
+/* Make text white ONLY in Copilot plugin right sidebar */
+
+/* Target the entire Copilot workspace leaf content */
+.workspace-leaf-content[data-type*="copilot"],
+.workspace-leaf-content[data-type*="copilot"] * {
+    color: white !important;
+}
+
+/* Target only the Copilot sidebar workspace leaf */
+.workspace-leaf-content[data-type*="copilot"] .copilot-chat-view,
+.workspace-leaf-content[data-type*="copilot"] .copilot-chat-view *,
+.workspace-leaf-content[data-type*="copilot"] .copilot-conversation-container,
+.workspace-leaf-content[data-type*="copilot"] .copilot-conversation-container * {
+    color: white !important;
+}
+
+/* Main text content and paragraphs */
+.workspace-leaf-content[data-type*="copilot"] p,
+.workspace-leaf-content[data-type*="copilot"] div,
+.workspace-leaf-content[data-type*="copilot"] span,
+.workspace-leaf-content[data-type*="copilot"] a,
+.workspace-leaf-content[data-type*="copilot"] label {
+    color: white !important;
+}
+
+/* Copilot input and text areas in sidebar only */
+.workspace-leaf-content[data-type*="copilot"] .copilot-chat-input,
+.workspace-leaf-content[data-type*="copilot"] .copilot-chat-input *,
+.workspace-leaf-content[data-type*="copilot"] [aria-label="Chat input"],
+.workspace-leaf-content[data-type*="copilot"] [aria-label="Chat input"] *,
+.workspace-leaf-content[data-type*="copilot"] textarea,
+.workspace-leaf-content[data-type*="copilot"] input {
+    color: white !important;
+}
+
+/* Tailwind text classes in Copilot sidebar only */
+.workspace-leaf-content[data-type*="copilot"] .tw-text-normal,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-muted,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-faint,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-sm,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-xs,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-base {
+    color: white !important;
+}
+
+/* Copilot sidebar panels */
+.workspace-leaf-content[data-type*="copilot"] [data-type="copilot-chat"],
+.workspace-leaf-content[data-type*="copilot"] [data-type="copilot-chat"] * {
+    color: white !important;
+}
+
+/* Pop-ups and tooltips with data-state (these often appear outside the main container) */
+[data-state="closed"],
+[data-state="delayed-open"],
+[data-state="instant-open"],
+[data-testid="truncatedText"] {
+    color: white !important;
+}
+
+/* Popovers and dropdowns that might be rendered at body level */
+body>div[data-radix-popper-content-wrapper],
+body>div[data-radix-popper-content-wrapper] *,
+[role="tooltip"],
+[role="tooltip"] *,
+[role="dialog"],
+[role="dialog"] * {
+    color: white !important;
+}
+
+/* Buttons and icons in Copilot sidebar only */
+.workspace-leaf-content[data-type*="copilot"] button.tw-text-muted,
+.workspace-leaf-content[data-type*="copilot"] button.tw-text-muted *,
+.workspace-leaf-content[data-type*="copilot"] .clickable-icon.tw-text-muted,
+.workspace-leaf-content[data-type*="copilot"] .clickable-icon.tw-text-muted *,
+.workspace-leaf-content[data-type*="copilot"] button:not(.copy-code-button):not(.vscode-open-button),
+.workspace-leaf-content[data-type*="copilot"] button:not(.copy-code-button):not(.vscode-open-button) * {
+    color: white !important;
+}
+
+/* Clickable icons in Copilot sidebar only - exclude code block buttons */
+.workspace-leaf-content[data-type*="copilot"] .clickable-icon:not(#editingToolbarModalBar *):not(.copy-code-button),
+.workspace-leaf-content[data-type*="copilot"] button:not(#editingToolbarModalBar *):not(.copy-code-button):not(.vscode-open-button) {
+    color: white !important;
+}
+
+/* Data-state elements in Copilot sidebar only */
+.workspace-leaf-content[data-type*="copilot"] [data-state="closed"],
+.workspace-leaf-content[data-type*="copilot"] [data-state="delayed-open"],
+.workspace-leaf-content[data-type*="copilot"] [data-state="instant-open"],
+.workspace-leaf-content[data-type*="copilot"] [data-testid="truncatedText"] {
+    color: white !important;
+}
+
+/* SVG icons in Copilot sidebar only */
+.workspace-leaf-content[data-type*="copilot"] button:not(.copy-code-button):not(.vscode-open-button) svg:not(#editingToolbarModalBar *),
+.workspace-leaf-content[data-type*="copilot"] .clickable-icon svg:not(#editingToolbarModalBar *),
+.workspace-leaf-content[data-type*="copilot"] svg {
+    color: white !important;
+    stroke: white !important;
+}
+
+/* ===== EXCEPTIONS - These must come LAST to override the above rules ===== */
+
+/* EXCEPTION: Keep text black in white background chip/badge */
+.workspace-leaf-content[data-type*="copilot"] .tw-bg-primary-alt .tw-text-normal,
+.workspace-leaf-content[data-type*="copilot"] .tw-bg-primary-alt .tw-text-faint,
+.workspace-leaf-content[data-type*="copilot"] .tw-bg-primary-alt [data-testid="truncatedText"],
+.workspace-leaf-content[data-type*="copilot"] .tw-bg-primary-alt span {
+    color: black !important;
+}
+
+/* EXCEPTION: Completely exclude the editing toolbar */
+#editingToolbarModalBar,
+#editingToolbarModalBar *,
+.editingToolbarGlassAesthetic,
+.editingToolbarGlassAesthetic * {
+    color: inherit !important;
+}
+
+/* EXCEPTION: Keep text black in code blocks */
+.workspace-leaf-content[data-type*="copilot"] pre,
+.workspace-leaf-content[data-type*="copilot"] pre *,
+.workspace-leaf-content[data-type*="copilot"] code,
+.workspace-leaf-content[data-type*="copilot"] code *,
+.workspace-leaf-content[data-type*="copilot"] .ccb-code-block,
+.workspace-leaf-content[data-type*="copilot"] .ccb-code-block * {
+    color: black !important;
+}
+
+/* EXCEPTION: Keep copy-code-button and VSCode button black */
+.workspace-leaf-content[data-type*="copilot"] .copy-code-button,
+.workspace-leaf-content[data-type*="copilot"] .copy-code-button *,
+.workspace-leaf-content[data-type*="copilot"] .copy-code-button svg,
+.workspace-leaf-content[data-type*="copilot"] .vscode-button-wrapper,
+.workspace-leaf-content[data-type*="copilot"] .vscode-button-wrapper *,
+.workspace-leaf-content[data-type*="copilot"] .vscode-open-button,
+.workspace-leaf-content[data-type*="copilot"] .vscode-open-button * {
+    color: black !important;
+    stroke: black !important;
+}
