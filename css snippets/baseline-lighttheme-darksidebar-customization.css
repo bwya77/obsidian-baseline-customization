@@ -323,6 +323,11 @@
   color: var(--secondary-text-color) !important;
 }
 
+/* Inactive tab title text color */
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner-title {
+  color: rgb(142, 144, 147) !important;
+}
+
 /* Tab hover effects - WHITE ICONS with BACKGROUND - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
 .workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .clickable-icon,
 .workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover svg,
@@ -1471,4 +1476,211 @@ body>div[data-radix-popper-content-wrapper] *,
 .workspace-leaf-content[data-type*="copilot"] .vscode-open-button * {
     color: black !important;
     stroke: black !important;
+}
+
+
+/* ========================================
+   NOTEBOOK NAVIGATOR - LIGHT GREY TEXT & WHITE ICONS
+   ======================================== */
+
+/* Base text color - light grey */
+.workspace-leaf-content[data-type="notebook-navigator"] {
+    color: #b3b3b3 !important;
+}
+
+/* View header title - pure white */
+.workspace-leaf-content[data-type="notebook-navigator"] .view-header-title,
+.workspace-leaf-content[data-type="notebook-navigator"] .view-header-title-parent {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Icons and clickable icons - pure white */
+.workspace-leaf-content[data-type="notebook-navigator"] .clickable-icon,
+.workspace-leaf-content[data-type="notebook-navigator"] .view-action,
+.workspace-leaf-content[data-type="notebook-navigator"] svg,
+.workspace-leaf-content[data-type="notebook-navigator"] .svg-icon,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-icon,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-icon svg,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-icon .svg-icon {
+    color: rgb(255, 255, 255) !important;
+    stroke: rgb(255, 255, 255) !important;
+}
+
+/* Navigation items - light grey text */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-pane-header-title,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-pane-header-text {
+    color: #b3b3b3 !important;
+}
+
+/* Navigation item names - pure white */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-name {
+    color: rgb(255, 255, 255);
+}
+
+/* Navigation item counts - darker grey */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-count {
+    color: rgb(114, 116, 120) !important;
+}
+
+/* File list items - slightly off-white title, light grey for other text */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file-name {
+    color: rgb(230, 230, 230);
+}
+
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file-preview {
+    color: #d0d0d0;
+}
+
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file-date,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-parent-folder-label {
+    color: #b3b3b3;
+}
+
+/* Date group headers - light grey text */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-date-group-header-text {
+    color: #b3b3b3 !important;
+}
+
+/* Default tag color - match UI blue */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file-tag {
+    color: rgb(107, 170, 232) !important;
+}
+
+/* Button hover effects */
+.workspace-leaf-content[data-type="notebook-navigator"] button:hover,
+.workspace-leaf-content[data-type="notebook-navigator"] .clickable-icon:hover {
+    background-color: var(--hover-color) !important;
+}
+
+/* Keep icon stroke white on hover */
+.workspace-leaf-content[data-type="notebook-navigator"] .clickable-icon:hover svg,
+.workspace-leaf-content[data-type="notebook-navigator"] button:hover svg {
+    stroke: white !important;
+}
+
+/* Quick actions panel */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-quick-actions-panel,
+.nn-quick-actions-panel {
+    background-color: rgb(29, 33, 39) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Quick actions panel text elements */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-quick-actions-panel *,
+.nn-quick-actions-panel * {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Selected note/item background */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem.nn-selected,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected {
+    background-color: rgb(107, 170, 232) !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 6px !important;
+}
+
+/* Selected note/item text elements - white text */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-file-name:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-file-preview:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-file-date:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-parent-folder-label:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem.nn-selected .nn-navitem-name:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected .nn-file-name:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected .nn-file-preview:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected .nn-file-date:not(.nn-file-tag) {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Lighten count numbers on selected items */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-navitem-count,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem.nn-selected .nn-navitem-count {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Modal dialogs - black text and close button (for Notebook Navigator modals) */
+.modal .modal-header,
+.modal .modal-header *,
+.modal .modal-content,
+.modal .modal-content *,
+.modal .modal-title {
+    color: black !important;
+}
+
+.modal .modal-close-button.mod-raised,
+.modal .modal-close-button.mod-raised svg,
+.modal .modal-close-button svg {
+    color: black !important;
+    stroke: black !important;
+}
+
+/* Tags on selected items - almost white with hint of color */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-file-tag,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected .nn-file-tag {
+    filter: brightness(4.0) saturate(0.2) !important;
+}
+
+/* Selected note/item icons */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected svg,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem.nn-selected svg,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected svg {
+    stroke: rgb(255, 255, 255) !important;
+}
+
+/* Hover state for navigation items and files (excluding selected) */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem:not(.nn-selected):hover,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file:not(.nn-selected):hover {
+    background-color: rgb(46, 52, 61) !important;
+    border-radius: 6px !important;
+}
+
+.nn-pane-header-icon {
+  color: RGB(221, 222, 223) !important;
+  fill: #ffffff !important;
+}
+
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-pane-header-title, .workspace-leaf-content[data-type="notebook-navigator"] .nn-pane-header-text {
+    color: rgb(221, 222, 223) !important;
+}
+
+/* ========================================
+   NOTEBOOK NAVIGATOR - OVERLAY DROP TARGET
+   ======================================== */
+
+/* The overlay container - semi-transparent dark overlay */
+.nn-navigation-pane-overlay {
+    background-color: rgba(29, 33, 39, 0.90) !important;
+}
+
+/* List pane overlay - semi-transparent dark overlay */
+.nn-list-pane-overlay {
+    background-color: rgba(29, 33, 39, 0.90) !important;
+}
+
+/* Calendar overlay - solid background */
+.nn-navigation-calendar-overlay {
+    background-color: rgb(29, 33, 39) !important;
+}
+
+/* Calendar header, nav, and grid - white text */
+.nn-navigation-calendar-header,
+.nn-navigation-calendar-header *,
+.nn-navigation-calendar-month,
+.nn-navigation-calendar-nav,
+.nn-navigation-calendar-nav *,
+.nn-navigation-calendar-nav-button,
+.nn-navigation-calendar-nav-button svg,
+.nn-navigation-calendar-today,
+.nn-navigation-calendar-grid,
+.nn-navigation-calendar-grid *,
+.nn-navigation-calendar-weekday,
+.nn-navigation-calendar-day,
+.nn-navigation-calendar-day-number {
+    color: rgb(255, 255, 255) !important;
+    stroke: rgb(255, 255, 255) !important;
+}
+
+/* Calendar day cells - border grid */
+.nn-navigation-calendar-day {
+    border: 1px solid rgba(199, 199, 199, 0.2) !important;
 }
