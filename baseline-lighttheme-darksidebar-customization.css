@@ -1,0 +1,1686 @@
+/* ========================================
+   OBSIDIAN DARK THEME IMPROVEMENTS
+   Clean, organized CSS for better readability
+   ======================================== */
+
+/* ========================================
+   CSS VARIABLES - THEME COLORS
+   ======================================== */
+:root {
+  /* Text Colors */
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #b3b3b3;
+  --muted-text-color: #909090;
+  --dark-text-color: #2e2e2e;
+
+  /* Accent Colors */
+  --accent-color: rgb(85, 172, 238);
+  --accent-hover: rgba(85, 172, 238, 0.3);
+  --accent-active: rgba(126, 154, 213, 0.167);
+
+  /* Background Colors */
+  --light-background: #ffffff;
+  --dark-background: #f5f5f5;
+  --code-background-light: rgb(243, 245, 247);
+  --code-background-dark: rgb(28, 33, 40);
+  --properties-background-light: rgb(243, 245, 247);
+  --properties-background-dark: rgb(28, 33, 40);
+  --hover-color: rgba(45, 52, 62);
+
+  /* Form Controls */
+  --disabled-background: #e0e0e0;
+  --disabled-border: #ccc;
+}
+
+/* ========================================
+   MODAL DIALOGS - UNIFIED STYLING
+   ======================================== */
+
+/* Base modal styling - White backgrounds with dark text */
+.modal.mod-settings .modal-content,
+.modal-container.mod-confirmation .modal,
+.modal-container.mod-confirmation .modal-content,
+.modal-container.mod-confirmation .modal-bg,
+.modal-container.mod-confirmation .modal-header,
+.modal-container.mod-confirmation .modal-button-container,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .modal-content,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .modal-container,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .community-modal-content {
+  background-color: var(--light-background) !important;
+  color: var(--dark-text-color) !important;
+}
+
+/* Modal text elements - Dark text for readability */
+.modal.mod-settings .modal-content *,
+.modal.mod-settings .setting-item-name,
+.modal.mod-settings .setting-item-description,
+.modal.mod-settings .setting-item-info,
+.modal.mod-settings .setting-item h3,
+.modal.mod-settings .setting-item h4,
+.modal.mod-settings .setting-item p,
+.modal.mod-settings .setting-item span,
+.modal.mod-settings .setting-item label,
+.modal-container.mod-confirmation *,
+.modal-container.mod-confirmation .modal-title,
+.modal-container.mod-confirmation .modal-content *,
+.modal-container.mod-confirmation p,
+.modal-container.mod-confirmation span,
+.modal-container.mod-confirmation div,
+.modal-container.mod-confirmation h1,
+.modal-container.mod-confirmation h2,
+.modal-container.mod-confirmation h3,
+.modal-container.mod-confirmation h4,
+.modal-container.mod-confirmation label,
+.modal-container.mod-confirmation button,
+.modal-container.mod-confirmation .button {
+  color: var(--dark-text-color) !important;
+}
+
+/* Modal form controls - Dark text on light backgrounds */
+.modal.mod-settings select,
+.modal.mod-settings select option,
+.modal.mod-settings .dropdown,
+.modal.mod-settings .suggestion-item,
+.modal.mod-settings .suggestion-content {
+  color: var(--dark-text-color) !important;
+  background-color: var(--dark-background) !important;
+}
+
+/* ========================================
+   SIDEBAR TOGGLE BUTTONS
+   ======================================== */
+
+/* Left sidebar toggle button hover */
+.sidebar-toggle-button.mod-left:hover,
+.sidebar-toggle-button.mod-left:hover .clickable-icon,
+.sidebar-toggle-button.mod-left:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Right sidebar toggle button hover */
+.sidebar-toggle-button.mod-right:hover,
+.sidebar-toggle-button.mod-right:hover .clickable-icon,
+.sidebar-toggle-button.mod-right:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Ensure sidebar toggle buttons are always white */
+.sidebar-toggle-button .clickable-icon,
+.sidebar-toggle-button .clickable-icon svg,
+.sidebar-toggle-button svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* ========================================
+   NAVIGATION & FILE EXPLORER
+   ======================================== */
+
+/* Vault profile section */
+.workspace-sidedock-vault-profile,
+.workspace-sidedock-vault-profile * {
+  color: var(--secondary-text-color) !important;
+}
+
+/* Vault switcher hover effects */
+.workspace-drawer-vault-switcher:hover,
+.workspace-drawer-vault-switcher:hover * {
+  color: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Vault switcher clickable icons */
+.workspace-drawer-vault-switcher .clickable-icon,
+.workspace-drawer-vault-switcher .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Vault switcher clickable icons hover */
+.workspace-drawer-vault-switcher .clickable-icon:hover,
+.workspace-drawer-vault-switcher .clickable-icon:hover svg,
+.workspace-drawer-vault-switcher:hover .clickable-icon,
+.workspace-drawer-vault-switcher:hover .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* File and folder navigation items */
+.nav-folder-title,
+.nav-file-title,
+.nav-file-title-content,
+.tree-item-inner,
+.tree-item-self,
+.nav-folder .nav-folder-title,
+.nav-files-container .nav-file .nav-file-title,
+.nav-files-container .nav-folder .nav-folder-title,
+.nav-folder-collapse-indicator,
+.nav-file-tag,
+.clickable-icon,
+.search-result-file-title,
+.search-result-file-match {
+  color: var(--primary-text-color) !important;
+}
+
+/* Navigation toolbar buttons */
+.nav-buttons-container .clickable-icon,
+.nav-buttons-container .clickable-icon svg,
+.nav-action-button,
+.nav-action-button .clickable-icon,
+.nav-action-button svg,
+.nav-header .nav-buttons-container .clickable-icon,
+.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container .clickable-icon,
+.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container svg,
+.workspace-sidedock-empty .nav-buttons-container .clickable-icon,
+.workspace-sidedock .nav-buttons-container .clickable-icon,
+.workspace-sidedock .nav-buttons-container svg {
+  color: var(--primary-text-color) !important;
+}
+
+/* Navigation toolbar hover effects - WHITE ICONS with BACKGROUND */
+.nav-buttons-container .clickable-icon:hover,
+.nav-buttons-container .clickable-icon:hover svg,
+.nav-action-button:hover,
+.nav-action-button:hover .clickable-icon,
+.nav-action-button:hover svg {
+  color: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Active file/folder styling */
+.nav-file-title.is-active {
+  background-color: var(--accent-color) !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+.nav-file-title.is-active .iconize-icon svg,
+.nav-file-title.is-active [data-icon] svg,
+.nav-file-title.is-active:hover .iconize-icon svg,
+.nav-file-title.is-active:hover [data-icon] svg {
+  stroke: rgb(243, 245, 247) !important;
+}
+
+/* Light theme hover effects for non-active items */
+.theme-light .nav-file-title:not(.is-active):hover,
+.theme-light .nav-folder-title:not(.is-active):hover {
+  background-color: var(--hover-color) !important;
+  color: white !important;
+}
+
+.theme-light .nav-file-title:not(.is-active):hover .nav-file-title-content,
+.theme-light .nav-folder-title:not(.is-active):hover .nav-folder-title-content,
+.theme-light .nav-file-title:not(.is-active):hover span,
+.theme-light .nav-folder-title:not(.is-active):hover span {
+  color: white !important;
+}
+
+/* Sidedock highlight color */
+.workspace-split.mod-horizontal.mod-sidedock.mod-left-split,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split {
+  --nav-item-background-active: var(--accent-active);
+}
+
+/* ========================================
+   RIGHT SIDEDOCK HOVER FIXES
+   ======================================== */
+
+/* Right sidedock navigation items hover */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .clickable-icon:hover {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock navigation text elements on hover */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title:hover .nav-file-title-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title:hover .nav-folder-title-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title:hover span,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title:hover span,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self:hover .tree-item-inner {
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock icons hover - WHITE ICONS with BACKGROUND */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .clickable-icon:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .clickable-icon:hover svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover .clickable-icon,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-action-button:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Right sidedock menu items hover */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .menu-item:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .menu-item:hover *,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .search-result:hover,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .search-result:hover * {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock selected/active items */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self.is-active,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .menu-item.is-selected,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .search-result.is-selected {
+  background-color: var(--accent-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock selected/active text elements */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active .nav-file-title-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active .nav-folder-title-content,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active span,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active span,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self.is-active .tree-item-inner,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .menu-item.is-selected *,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .search-result.is-selected * {
+  color: var(--primary-text-color) !important;
+}
+
+/* Right sidedock selected/active icons */
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active .iconize-icon svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-file-title.is-active [data-icon] svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active .iconize-icon svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .nav-folder-title.is-active [data-icon] svg,
+.workspace-split.mod-horizontal.mod-sidedock.mod-right-split .tree-item-self.is-active .clickable-icon svg {
+  stroke: var(--primary-text-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* ========================================
+   WORKSPACE TABS - MODIFIED TO EXCLUDE MAIN EDITOR
+   ======================================== */
+
+/* Active tab styling */
+.workspace-tab-header-container .workspace-tab-header.is-active .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header.is-active svg,
+.workspace-tab-header.is-active .workspace-tab-header-inner .clickable-icon {
+  color: var(--primary-text-color) !important;
+}
+
+/* Inactive tab styling */
+.workspace-tab-header-container .workspace-tab-header:not(.is-active) .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active) svg,
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner .clickable-icon {
+  color: var(--secondary-text-color) !important;
+}
+
+/* Inactive tab title text color */
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner-title {
+  color: rgb(142, 144, 147) !important;
+}
+
+/* Tab hover effects - WHITE ICONS with BACKGROUND - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner .clickable-icon {
+  color: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+
+/* ========================================
+   WORKSPACE TAB HEADER CONTAINER ICONS FIX - EXCLUDE MAIN EDITOR
+   ======================================== */
+
+/* Target all icons in tab headers - force white color */
+.workspace-tab-header-container .clickable-icon,
+.workspace-tab-header-container .clickable-icon svg,
+.workspace-tab-header-container .view-action,
+.workspace-tab-header-container .view-action svg,
+.workspace-tab-header-container .workspace-tab-header .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header .clickable-icon svg,
+.workspace-tab-header .clickable-icon,
+.workspace-tab-header .clickable-icon svg,
+.workspace-tab-header .view-action,
+.workspace-tab-header .view-action svg,
+.workspace-tab-header-inner .clickable-icon,
+.workspace-tab-header-inner .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Hover effects for entire tab header area - EXPANDED HOVER AREA - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover {
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Keep icons white on tab header hover - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .clickable-icon svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .view-action,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .view-action svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner .clickable-icon svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .clickable-icon,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active):hover .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Specific hover for individual clickable icons within tabs - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .clickable-icon:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .view-action:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-inner:not(.is-active) .clickable-icon:hover {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+  padding: 2px !important;
+}
+
+/* Specific hover for SVG elements inside tab headers - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .clickable-icon:hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .view-action:hover svg,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-inner:not(.is-active) .clickable-icon:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Override any existing tab header specific rules */
+.workspace-tab-header-container .workspace-tab-header.is-active .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header.is-active svg,
+.workspace-tab-header.is-active .workspace-tab-header-inner .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active) .clickable-icon,
+.workspace-tab-header-container .workspace-tab-header:not(.is-active) svg,
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner .clickable-icon {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Ensure hover works on both active and inactive tabs - FULL TAB AREA - ONLY NON-ACTIVE TABS - EXCLUDE MAIN EDITOR */
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header-container .workspace-tab-header:not(.is-active) .clickable-icon:hover,
+.workspace-split:not(.mod-vertical.mod-root) .workspace-tab-header:not(.is-active) .workspace-tab-header-inner .clickable-icon:hover {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+  padding: 4px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
+/* ========================================
+   NEW TAB BUTTON HOVER - INCLUDE IN MAIN EDITOR
+   ======================================== */
+
+/* New tab button hover effects - applies everywhere including main editor */
+.workspace-tab-header-new-tab:hover,
+.workspace-tab-header-new-tab:hover .clickable-icon,
+.workspace-tab-header-new-tab:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* Ensure new tab button has white icon by default */
+.workspace-tab-header-new-tab .clickable-icon,
+.workspace-tab-header-new-tab svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* ========================================
+   WORKSPACE DRAWER VAULT ACTIONS FIX
+   ======================================== */
+
+/* Target vault actions drawer icons - force white color */
+.workspace-drawer-vault-actions .clickable-icon,
+.workspace-drawer-vault-actions .clickable-icon svg,
+.workspace-drawer-vault-actions .nav-action-button,
+.workspace-drawer-vault-actions .nav-action-button .clickable-icon,
+.workspace-drawer-vault-actions .nav-action-button svg,
+.workspace-drawer .workspace-drawer-vault-actions .clickable-icon,
+.workspace-drawer .workspace-drawer-vault-actions .clickable-icon svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+}
+
+/* Hover effects for vault actions drawer icons - WHITE ICONS with BACKGROUND */
+.workspace-drawer-vault-actions .clickable-icon:hover,
+.workspace-drawer-vault-actions .clickable-icon:hover svg,
+.workspace-drawer-vault-actions .nav-action-button:hover,
+.workspace-drawer-vault-actions .nav-action-button:hover .clickable-icon,
+.workspace-drawer-vault-actions .nav-action-button:hover svg,
+.workspace-drawer .workspace-drawer-vault-actions .clickable-icon:hover,
+.workspace-drawer .workspace-drawer-vault-actions .clickable-icon:hover svg {
+  color: var(--primary-text-color) !important;
+  stroke: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+  border-radius: 4px !important;
+}
+
+/* ========================================
+   COMMAND PALETTE & SUGGESTIONS
+   ======================================== */
+
+/* Command palette input styling */
+.prompt-input,
+.prompt-input input,
+.modal.mod-command-palette .prompt-input,
+.modal.mod-command-palette .prompt-input input,
+.modal.mod-command-palette input[type="text"] {
+  color: var(--primary-text-color) !important;
+  background-color: transparent !important;
+}
+
+/* Override any conflicting rules for command palette input */
+.prompt-input-container input,
+.prompt-input-container textarea {
+  color: var(--primary-text-color) !important;
+}
+
+/* Placeholder text */
+.prompt-input input::placeholder,
+.modal.mod-command-palette input::placeholder {
+  color: var(--secondary-text-color) !important;
+}
+
+/* Selected suggestion highlighting */
+.prompt-results .suggestion-item.is-selected,
+.suggestion-container .suggestion-item.is-selected {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.suggestion-item.is-selected .suggestion-title {
+  color: white !important;
+}
+
+.suggestion-item.is-selected .suggestion-note {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Vault switcher and other prompts */
+/* Command palette input styling */
+.prompt-input,
+.prompt-input input,
+.modal.mod-command-palette .prompt-input,
+.modal.mod-command-palette .prompt-input input,
+.modal.mod-command-palette input[type="text"] {
+  color: var(--primary-text-color) !important;
+  background-color: transparent !important;
+}
+
+/* Placeholder text */
+.prompt-input input::placeholder,
+.modal.mod-command-palette input::placeholder {
+  color: var(--secondary-text-color) !important;
+}
+
+/* FIXED: Vault switcher and other prompts - WHITE TEXT */
+.prompt,
+.prompt .prompt-results,
+.prompt .prompt-results .suggestion-item,
+.prompt .prompt-results .suggestion-content,
+.modal.mod-switcher,
+.modal.mod-switcher .suggestion-item,
+.modal.mod-switcher .suggestion-content {
+  color: var(--primary-text-color) !important;
+  /* Changed from secondary to primary */
+}
+
+/* Selected suggestion highlighting */
+.prompt-results .suggestion-item.is-selected,
+.suggestion-container .suggestion-item.is-selected {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.suggestion-item.is-selected .suggestion-title {
+  color: white !important;
+}
+
+.suggestion-item.is-selected .suggestion-note {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ========================================
+   QUERY TOOLBAR MENUS
+   ======================================== */
+
+/* Base query toolbar menu styling */
+.menu.query-toolbar-menu.mod-properties,
+.menu.query-toolbar-menu.mod-properties *,
+.menu.query-toolbar-menu.mod-filters,
+.menu.query-toolbar-menu.mod-filters * {
+  color: rgb(218, 218, 218) !important;
+}
+
+/* Query toolbar menu items */
+.menu.query-toolbar-menu.mod-properties .menu-item,
+.menu.query-toolbar-menu.mod-properties .menu-item-title,
+.menu.query-toolbar-menu.mod-properties .menu-item-icon,
+.menu.query-toolbar-menu.mod-properties .clickable-icon,
+.menu.query-toolbar-menu.mod-filters .menu-item,
+.menu.query-toolbar-menu.mod-filters .menu-item-title,
+.menu.query-toolbar-menu.mod-filters .menu-item-icon,
+.menu.query-toolbar-menu.mod-filters .clickable-icon {
+  color: rgb(218, 218, 218) !important;
+}
+
+/* Selected and hover states - FIXED TO USE --hover-color */
+.menu.query-toolbar-menu.mod-properties .menu-item.is-selected,
+.menu.query-toolbar-menu.mod-properties .menu-item.is-selected *,
+.menu.query-toolbar-menu.mod-properties .menu-item:hover,
+.menu.query-toolbar-menu.mod-properties .menu-item:hover *,
+.menu.query-toolbar-menu.mod-filters .menu-item.is-selected,
+.menu.query-toolbar-menu.mod-filters .menu-item.is-selected *,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover * {
+  color: var(--primary-text-color) !important;
+  background-color: var(--hover-color) !important;
+}
+
+/* Hover accent colors - CHANGED FROM BLUE TO WHITE */
+.menu.query-toolbar-menu.mod-properties .menu-item:hover .menu-item-title,
+.menu.query-toolbar-menu.mod-properties .menu-item:hover .menu-item-icon,
+.menu.query-toolbar-menu.mod-properties .menu-item:hover .clickable-icon,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover .menu-item-title,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover .menu-item-icon,
+.menu.query-toolbar-menu.mod-filters .menu-item:hover .clickable-icon {
+  color: var(--primary-text-color) !important;
+}
+
+/* Form controls in query toolbars */
+.menu.query-toolbar-menu.mod-properties input,
+.menu.query-toolbar-menu.mod-properties select,
+.menu.query-toolbar-menu.mod-properties option,
+.menu.query-toolbar-menu.mod-properties textarea,
+.menu.query-toolbar-menu.mod-filters input,
+.menu.query-toolbar-menu.mod-filters select,
+.menu.query-toolbar-menu.mod-filters option,
+.menu.query-toolbar-menu.mod-filters textarea {
+  color: var(--dark-text-color) !important;
+  background-color: var(--dark-background) !important;
+}
+
+/* Specific filter components */
+.menu.query-toolbar-menu.mod-filters .input-row-content,
+.menu.query-toolbar-menu.mod-filters .filter-group-statements,
+.menu.query-toolbar-menu.mod-filters .filter-statement,
+.menu.query-toolbar-menu.mod-filters .filter-group-header,
+.menu.query-toolbar-menu.mod-filters .conjunction.dropdown,
+.menu.query-toolbar-menu.mod-filters .filter-expression.metadata-property {
+  color: var(--dark-text-color) !important;
+}
+
+/* Section content (keep white) */
+.menu.query-toolbar-menu.mod-filters .query-toolbar-section-content,
+.menu.query-toolbar-menu.mod-filters .query-toolbar-section-content * {
+  color: rgb(218, 218, 218) !important;
+}
+
+/* Checkboxes - enabled state */
+.menu.query-toolbar-menu input[type="checkbox"]:checked,
+.menu.query-toolbar-menu .checkbox-container.is-enabled,
+.menu.query-toolbar-menu .is-enabled {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Checkboxes - disabled state */
+.menu.query-toolbar-menu input[type="checkbox"]:not(:checked),
+.menu.query-toolbar-menu .checkbox-container:not(.is-enabled) {
+  background-color: var(--disabled-background) !important;
+  border-color: var(--disabled-border) !important;
+}
+
+/* ========================================
+   EDITOR INTERFACE ICONS
+   ======================================== */
+
+/* Main editor toolbar and interface icons - Black for visibility */
+.workspace-leaf-content .view-header-icon,
+.workspace-leaf-content .clickable-icon,
+.view-action,
+.titlebar-button,
+.mod-root .workspace-leaf-content .view-header .view-actions .clickable-icon,
+.editor-toolbar .clickable-icon,
+.view-header .view-actions .clickable-icon,
+.status-bar .status-bar-item .clickable-icon {
+  color: #000000 !important;
+}
+
+/* ========================================
+   SETTINGS & TOGGLE ITEMS (NON-MODAL)
+   ======================================== */
+
+/* Setting toggle items outside of settings modal - White text */
+.workspace:not(.modal-open) .setting-item.mod-toggle,
+.setting-item.mod-toggle:not(.modal.mod-settings .setting-item.mod-toggle) {
+  color: white !important;
+}
+
+/* Setting item components outside modal */
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-name,
+.setting-item.mod-toggle .setting-item-name:not(.modal.mod-settings .setting-item-name),
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-description,
+.setting-item.mod-toggle .setting-item-description:not(.modal.mod-settings .setting-item-description),
+.workspace:not(.modal-open) .setting-item.mod-toggle label,
+.setting-item.mod-toggle label:not(.modal.mod-settings label),
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-control,
+.setting-item.mod-toggle .setting-item-control:not(.modal.mod-settings .setting-item-control) {
+  color: white !important;
+}
+
+/* ========================================
+   MENU SYSTEM - GENERAL WHITE TEXT
+   ======================================== */
+
+/* Settings menu navigation */
+.vertical-tab-nav-item,
+.vertical-tab-nav-item .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* Modal dialog text */
+.modal .setting-item-name,
+.modal .setting-item-description,
+.modal .modal-title,
+.modal-content {
+  color: white !important;
+}
+
+/* Search suggestions */
+.search-suggest-item,
+.search-suggest-item .search-suggest-item-text {
+  color: white !important;
+}
+
+/* Graph view controls */
+.graph-controls .setting-item-name,
+.graph-controls .setting-item-description {
+  color: white !important;
+}
+
+/* Vault switcher */
+.vault-switcher .vault-switcher-item,
+.vault-switcher .vault-switcher-item-name {
+  color: white !important;
+}
+
+/* Quick switcher */
+.prompt .prompt-instruction,
+.prompt-input-container input {
+  color: white !important;
+}
+
+/* Removed conflicting black text color for command palette input */
+
+/* Search results count */
+.workspace-leaf-content[data-type="search"] .clickable-icon.search-results-result-count,
+.workspace-leaf-content[data-type="search"] .clickable-icon.search-results-result-count span {
+  color: white !important;
+}
+
+/* Search results content - Black for readability */
+.search-result-container .tree-item.search-result,
+.search-result-container .search-result-file-title,
+.search-result-container .search-result-file-matches,
+.search-result-container .search-result-file-match {
+  color: black !important;
+}
+
+/* General menu items */
+.menu-item-icon+*,
+.menu-separator+.menu-item {
+  color: white !important;
+}
+
+/* ========================================
+   CONTEXT MENU HOVER STYLING - FIXED
+   Using --hover-color consistently
+   ======================================== */
+
+/* General context menu items - FIXED TO USE --hover-color */
+.menu .menu-item:hover,
+.menu .menu-item:hover *,
+.menu .menu-item.is-selected,
+.menu .menu-item.is-selected * {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Context menu item components on hover */
+.menu .menu-item:hover .menu-item-title,
+.menu .menu-item:hover .menu-item-icon,
+.menu .menu-item:hover .clickable-icon,
+.menu .menu-item:hover svg,
+.menu .menu-item.is-selected .menu-item-title,
+.menu .menu-item.is-selected .menu-item-icon,
+.menu .menu-item.is-selected .clickable-icon,
+.menu .menu-item.is-selected svg {
+  color: var(--primary-text-color) !important;
+}
+
+/* Specific context menu types */
+.context-menu .menu-item:hover,
+.context-menu .menu-item:hover *,
+.file-menu .menu-item:hover,
+.file-menu .menu-item:hover *,
+.workspace-leaf-content .menu .menu-item:hover,
+.workspace-leaf-content .menu .menu-item:hover * {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Right-click context menus */
+.menu.mod-context .menu-item:hover,
+.menu.mod-context .menu-item:hover *,
+.menu.mod-context .menu-item.is-selected,
+.menu.mod-context .menu-item.is-selected * {
+  background-color: var(--hover-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Override any existing hover styles that might conflict */
+.menu .menu-item:hover .menu-item-title,
+.menu .menu-item:hover .menu-item-icon,
+.menu .menu-item:hover .clickable-icon {
+  color: var(--primary-text-color) !important;
+}
+
+/* Ensure submenu indicators are also consistent on hover */
+.menu .menu-item:hover .menu-item-submenu-indicator,
+.menu .menu-item.is-selected .menu-item-submenu-indicator {
+  color: var(--primary-text-color) !important;
+}
+
+/* ========================================
+   VERTICAL TAB HEADERS - CUSTOM STYLING
+   ======================================== */
+
+/* Search input and clear button - BLACK TEXT for readability */
+.modal.mod-settings .vertical-tab-header-group .search-input-container,
+.modal.mod-settings .vertical-tab-header-group .search-input-container *,
+.modal.mod-settings .vertical-tab-header-group .search-input-clear-button,
+.modal.mod-settings .vertical-tab-header-group .search-input-clear-button * {
+  color: black !important;
+}
+
+/* Vertical tab header group text - WHITE TEXT */
+.modal.mod-settings .vertical-tab-header-group,
+.modal.mod-settings .vertical-tab-header-group * {
+  color: white !important;
+}
+
+/* Target only the actual vertical tab headers in settings */
+.modal.mod-settings .vertical-tab-header {
+  background-color: rgb(28, 33, 40) !important;
+  padding: 10px !important;
+  color: white !important;
+}
+
+/* Target the nav items within vertical tab headers */
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item {
+  background-color: rgb(28, 33, 40) !important;
+  color: white !important;
+}
+
+/* Target the text titles specifically - WHITE TEXT */
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* Hover state - FIXED TO USE --hover-color */
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item:hover {
+  background-color: var(--hover-color) !important;
+  color: white !important;
+}
+
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item:hover .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* Selected/active state */
+.modal.mod-settings .vertical-tab-header.is-active,
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item.is-active {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.modal.mod-settings .vertical-tab-header.is-active .vertical-tab-nav-item-title,
+.modal.mod-settings .vertical-tab-header .vertical-tab-nav-item.is-active .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* Fix the grey text issue - override the general menu rule */
+.modal.mod-settings .vertical-tab-nav-item,
+.modal.mod-settings .vertical-tab-nav-item .vertical-tab-nav-item-title {
+  color: white !important;
+}
+
+/* ========================================
+   PROPERTIES BOX STYLING
+   ======================================== */
+
+/* Base properties container */
+.metadata-container {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+/* Theme-specific properties styling */
+.theme-dark .metadata-container {
+  background-color: var(--properties-background-dark);
+  border-color: var(--background-modifier-border-hover);
+}
+
+.theme-light .metadata-container {
+  background-color: var(--properties-background-light);
+  border-color: var(--background-modifier-border);
+}
+
+/* ========================================
+   CODE BLOCKS & INLINE CODE
+   ======================================== */
+
+/* Rounded corners for all themes */
+.theme-light,
+.theme-dark {
+
+  /* Code block borders */
+  .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+  }
+
+  .cm-s-obsidian div.HyperMD-codeblock-end-bg {
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+  }
+
+  /* Preview mode code blocks */
+  .markdown-preview-view pre {
+    border-radius: 8px !important;
+  }
+
+  /* Inline code */
+  .markdown-preview-view code,
+  .cm-s-obsidian span.cm-inline-code {
+    border-radius: 6px !important;
+  }
+}
+
+/* Light theme code colors */
+.theme-light {
+
+  .markdown-preview-view pre[class*="language-"],
+  .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+  .markdown-preview-view code,
+  .markdown-rendered code,
+  .cm-s-obsidian span.cm-inline-code {
+    background-color: var(--code-background-light) !important;
+  }
+}
+
+/* Dark theme code colors */
+.theme-dark {
+
+  .markdown-preview-view pre[class*="language-"],
+  .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+  .markdown-preview-view code,
+  .markdown-rendered code,
+  .cm-s-obsidian span.cm-inline-code {
+    background-color: var(--code-background-dark) !important;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* General utility classes for consistent theming */
+.theme-dark-text {
+  color: var(--primary-text-color) !important;
+}
+
+.theme-light-text {
+  color: var(--dark-text-color) !important;
+}
+
+.theme-accent {
+  color: var(--accent-color) !important;
+}
+
+
+/* ========================================
+   WORKSPACE TAB HEADER TAPPABLE - COMPREHENSIVE FIX
+   ======================================== */
+
+.workspace-tab-header.tappable:not(.is-active):hover {
+  background-color: var(--hover-color) !important;
+}
+
+
+/* ========================================
+   ICONIZE MODAL PROMPT RESULTS - WHITE TEXT
+   ======================================== */
+
+/* Iconize modal prompt results - White text */
+.prompt-results.iconize-modal,
+.prompt-results.iconize-modal *,
+.prompt-results.iconize-modal .suggestion-item,
+.prompt-results.iconize-modal .suggestion-item *,
+.prompt-results.iconize-modal .suggestion-title,
+.prompt-results.iconize-modal .suggestion-content,
+.prompt-results.iconize-modal .suggestion-note {
+  color: var(--primary-text-color) !important;
+}
+
+/* Selected suggestion in iconize modal */
+.prompt-results.iconize-modal .suggestion-item.is-selected,
+.prompt-results.iconize-modal .suggestion-item.is-selected * {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+
+/* ========================================
+   COMMUNITY MODAL DETAILS FIX
+   Add to your existing CSS file
+   ======================================== */
+
+/* Add community-modal-details to your existing modal background selectors */
+.modal.mod-settings .modal-content,
+.modal-container.mod-confirmation .modal,
+.modal-container.mod-confirmation .modal-content,
+.modal-container.mod-confirmation .modal-bg,
+.modal-container.mod-confirmation .modal-header,
+.modal-container.mod-confirmation .modal-button-container,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .modal-content,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .modal-container,
+.modal.mod-community-modal.mod-sidebar-layout.mod-community-theme .community-modal-content,
+.community-modal-details {
+  background-color: var(--light-background) !important;
+  color: var(--dark-text-color) !important;
+}
+
+/* Specific styling for community modal details */
+.community-modal-details,
+.community-modal-details * {
+  background-color: var(--light-background) !important;
+  color: var(--dark-text-color) !important;
+}
+
+/* Community modal details text elements */
+.community-modal-details h1,
+.community-modal-details h2,
+.community-modal-details h3,
+.community-modal-details h4,
+.community-modal-details h5,
+.community-modal-details h6,
+.community-modal-details p,
+.community-modal-details span,
+.community-modal-details div,
+.community-modal-details label,
+.community-modal-details a,
+.community-modal-details .community-modal-info,
+.community-modal-details .community-modal-description {
+  color: var(--dark-text-color) !important;
+}
+
+/* Community modal search results wrapper */
+.community-modal-search-results-wrapper,
+.community-modal-search-results-wrapper * {
+  background-color: var(--light-background) !important;
+  color: var(--dark-text-color) !important;
+}
+
+/* Community item names and descriptions */
+.community-item-name,
+.community-item-desc,
+.community-modal-search-results-wrapper .community-item-name,
+.community-modal-search-results-wrapper .community-item-desc {
+  color: var(--dark-text-color) !important;
+}
+
+/* All text elements in community search results */
+.community-modal-search-results-wrapper h1,
+.community-modal-search-results-wrapper h2,
+.community-modal-search-results-wrapper h3,
+.community-modal-search-results-wrapper h4,
+.community-modal-search-results-wrapper h5,
+.community-modal-search-results-wrapper h6,
+.community-modal-search-results-wrapper p,
+.community-modal-search-results-wrapper span,
+.community-modal-search-results-wrapper div,
+.community-modal-search-results-wrapper label,
+.community-modal-search-results-wrapper a {
+  color: var(--dark-text-color) !important;
+}
+
+/* Bold styling for "Installed" text */
+.flair.mod-pop,
+.community-item .flair.mod-pop,
+.community-modal-search-results-wrapper .flair.mod-pop,
+span.flair.mod-pop {
+  font-weight: bold !important;
+  color: var(--dark-text-color) !important;
+}
+
+
+
+/* Also target headings in reading view if needed */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  color: rgb(29, 33, 39) !important;
+}
+
+/* ========================================
+   MODAL MOD-NARROW SETTING-ITEM-NAME BLACK - Export to PDF
+   ======================================== */
+
+/* Ultra-specific targeting to override any existing white text rules */
+.modal-container.mod-confirmation .modal.mod-narrow .modal-content .setting-item .setting-item-name,
+.modal-container .modal.mod-narrow .modal-content .setting-item .setting-item-name,
+.modal.mod-narrow .modal-content .setting-item .setting-item-name,
+div.modal.mod-narrow div.setting-item-name {
+  color: var(--dark-text-color) !important;
+}
+
+
+.menu.query-toolbar-menu.mod-filters .query-toolbar-section-content,
+.menu.query-toolbar-menu.mod-filters .query-toolbar-section-content * {
+  color: rgb(172, 172, 172) !important;
+}
+
+
+/* ========================================
+   BASES
+   ======================================== */
+/* Make text and icons white in query toolbar menu */
+.menu.query-toolbar-menu {
+  color: var(--primary-text-color);
+}
+
+/* White text for all menu items */
+.bases-toolbar-menu-item-name,
+.modal-title,
+.modal-cta-button,
+.bases-toolbar-menu-form .input-row .input-row-label {
+  color: var(--primary-text-color) !important;
+}
+
+/* Rounded corners for bases-thead - top only */
+.bases-thead {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Rounded corners for bases-tbody - bottom only */
+.bases-tbody {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+/* White icons - targets SVG stroke color */
+.bases-toolbar-menu-item-info-icon svg,
+.bases-toolbar-menu-item-icon svg,
+.search-input-clear-button svg {
+  stroke: var(--primary-text-color) !important;
+}
+
+/* White search input text and placeholder */
+.search-input-container input {
+  color: var(--primary-text-color) !important;
+}
+
+.search-input-container input::placeholder {
+  color: var(--primary-text-color) !important;
+
+  /* Slightly transparent for placeholder effect */
+}
+
+/* White clear button */
+.search-input-clear-button {
+  color: var(--primary-text-color) !important;
+}
+
+
+
+.search-input-container input {
+  color: rgb(149, 149, 149) !important;
+}
+
+
+
+
+/* Obsidian Close Button Styling */
+/* Obsidian Close Button Styling - High Specificity */
+
+
+
+/* ========================================
+   TABS
+   ======================================== */
+.workspace-tab-header.is-active .workspace-tab-header-inner .workspace-tab-header-inner-close-button:hover,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button:hover,
+.workspace-tab-header.is-active .workspace-tab-header-status-icon.mod-pinned:hover {
+  background-color: rgba(136, 136, 136, 0.25) !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+}
+
+/* Pin icon - black for active tabs */
+.workspace-tab-header-status-icon.mod-pinned svg path {
+  stroke: var(--dark-text-color) !important;
+  fill: none !important;
+}
+
+/* Pin icon - white for inactive tabs */
+.workspace-tab-header:not(.is-active) .workspace-tab-header-status-icon.mod-pinned svg path {
+  stroke: #ffffff !important;
+  fill: none !important;
+}
+
+
+/* ========================================
+   MENU-SCROLL ICON COLORS - Sort, Filter buttons for BASES
+   ======================================== */
+/* Default icon colors in menu-scroll */
+.menu-scroll .menu-item-icon,
+.menu-scroll .menu-item-icon svg,
+.menu-scroll .svg-icon {
+  color: rgb(199, 199, 199) !important;
+}
+/* Warning items (Delete button) - RED */
+.menu-scroll .menu-item.is-warning .menu-item-icon,
+.menu-scroll .menu-item.is-warning .menu-item-icon svg,
+.menu-scroll .menu-item.is-warning .svg-icon {
+  color: red !important;
+}
+
+.text-icon-button.is-active {
+  color: #5c5c5c;
+}
+
+.text-icon-button.is-active:hover {
+  color: black;
+  background-color: rgb(238, 238, 238);
+}
+
+.text-icon-button.is-active:hover .text-button-icon,
+.text-icon-button.is-active:hover .text-button-icon svg {
+  color: #5c5c5c;
+  stroke: #5c5c5c;
+}
+
+
+
+
+
+
+
+
+
+
+/* White Modal Background and Padding */
+.modal {
+  background-color: white !important;
+}
+
+[id^="react-aria"][id*=":r"] {
+  background-color: white !important;
+  color: #2e3338 !important;
+}
+
+
+
+
+.modal.mod-sync-log .sync-log-container,
+.modal.mod-sync-log .sync-log-container * {
+  color: white !important;
+}
+
+
+.modal.mod-lg * {
+  color: black !important;
+}
+
+
+
+
+
+
+
+
+/* Keep tree items in graph controls black */
+.graph-controls .tree-item-inner,
+.graph-controls .tree-item-self,
+.tree-item.graph-control-section.mod-display,
+.tree-item.graph-control-section.mod-display *,
+.tree-item-children .setting-item,
+.tree-item-children .setting-item *,
+.setting-item-name,
+.setting-item-description {
+  color: black !important;
+}
+
+
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-name,
+.setting-item.mod-toggle .setting-item-name:not(.modal.mod-settings .setting-item-name),
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-description,
+.setting-item.mod-toggle .setting-item-description:not(.modal.mod-settings .setting-item-description),
+.workspace:not(.modal-open) .setting-item.mod-toggle label,
+.setting-item.mod-toggle label:not(.modal.mod-settings label),
+.workspace:not(.modal-open) .setting-item.mod-toggle .setting-item-control,
+.setting-item.mod-toggle .setting-item-control:not(.modal.mod-settings .setting-item-control) {
+  color: black !important;
+}
+
+.workspace-split:not(.mod-root) .graph-controls.is-close {
+  background-color: white;
+}
+
+
+
+.graph-view.color-fill {
+  color: var(--accent-color);
+}
+.graph-view.color-text {
+  color: #ffffff;
+}
+
+.graph-view.color-fill-highlight {
+  color: #26798c;
+}
+
+.graph-view.color-line-highlight {
+  color: #5d94d2;
+}
+
+
+
+
+
+/* Make text white ONLY in Copilot plugin right sidebar */
+
+/* Target the entire Copilot workspace leaf content */
+.workspace-leaf-content[data-type*="copilot"],
+.workspace-leaf-content[data-type*="copilot"] * {
+    color: white !important;
+}
+
+/* Target only the Copilot sidebar workspace leaf */
+.workspace-leaf-content[data-type*="copilot"] .copilot-chat-view,
+.workspace-leaf-content[data-type*="copilot"] .copilot-chat-view *,
+.workspace-leaf-content[data-type*="copilot"] .copilot-conversation-container,
+.workspace-leaf-content[data-type*="copilot"] .copilot-conversation-container * {
+    color: white !important;
+}
+
+/* Main text content and paragraphs */
+.workspace-leaf-content[data-type*="copilot"] p,
+.workspace-leaf-content[data-type*="copilot"] div,
+.workspace-leaf-content[data-type*="copilot"] span,
+.workspace-leaf-content[data-type*="copilot"] a,
+.workspace-leaf-content[data-type*="copilot"] label {
+    color: white !important;
+}
+
+/* Copilot input and text areas in sidebar only */
+.workspace-leaf-content[data-type*="copilot"] .copilot-chat-input,
+.workspace-leaf-content[data-type*="copilot"] .copilot-chat-input *,
+.workspace-leaf-content[data-type*="copilot"] [aria-label="Chat input"],
+.workspace-leaf-content[data-type*="copilot"] [aria-label="Chat input"] *,
+.workspace-leaf-content[data-type*="copilot"] textarea,
+.workspace-leaf-content[data-type*="copilot"] input {
+    color: white !important;
+}
+
+/* Tailwind text classes in Copilot sidebar only */
+.workspace-leaf-content[data-type*="copilot"] .tw-text-normal,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-muted,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-faint,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-sm,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-xs,
+.workspace-leaf-content[data-type*="copilot"] .tw-text-base {
+    color: white !important;
+}
+
+/* Copilot sidebar panels */
+.workspace-leaf-content[data-type*="copilot"] [data-type="copilot-chat"],
+.workspace-leaf-content[data-type*="copilot"] [data-type="copilot-chat"] * {
+    color: white !important;
+}
+
+/* Pop-ups and tooltips with data-state (these often appear outside the main container) */
+[data-state="closed"],
+[data-state="delayed-open"],
+[data-state="instant-open"],
+[data-testid="truncatedText"] {
+    color: white !important;
+}
+
+/* Popovers and dropdowns that might be rendered at body level */
+body>div[data-radix-popper-content-wrapper],
+body>div[data-radix-popper-content-wrapper] *,
+[role="tooltip"],
+[role="tooltip"] *,
+[role="dialog"],
+[role="dialog"] * {
+    color: white !important;
+}
+
+/* Buttons and icons in Copilot sidebar only */
+.workspace-leaf-content[data-type*="copilot"] button.tw-text-muted,
+.workspace-leaf-content[data-type*="copilot"] button.tw-text-muted *,
+.workspace-leaf-content[data-type*="copilot"] .clickable-icon.tw-text-muted,
+.workspace-leaf-content[data-type*="copilot"] .clickable-icon.tw-text-muted *,
+.workspace-leaf-content[data-type*="copilot"] button:not(.copy-code-button):not(.vscode-open-button),
+.workspace-leaf-content[data-type*="copilot"] button:not(.copy-code-button):not(.vscode-open-button) * {
+    color: white !important;
+}
+
+/* Clickable icons in Copilot sidebar only - exclude code block buttons */
+.workspace-leaf-content[data-type*="copilot"] .clickable-icon:not(#editingToolbarModalBar *):not(.copy-code-button),
+.workspace-leaf-content[data-type*="copilot"] button:not(#editingToolbarModalBar *):not(.copy-code-button):not(.vscode-open-button) {
+    color: white !important;
+}
+
+/* Data-state elements in Copilot sidebar only */
+.workspace-leaf-content[data-type*="copilot"] [data-state="closed"],
+.workspace-leaf-content[data-type*="copilot"] [data-state="delayed-open"],
+.workspace-leaf-content[data-type*="copilot"] [data-state="instant-open"],
+.workspace-leaf-content[data-type*="copilot"] [data-testid="truncatedText"] {
+    color: white !important;
+}
+
+/* SVG icons in Copilot sidebar only */
+.workspace-leaf-content[data-type*="copilot"] button:not(.copy-code-button):not(.vscode-open-button) svg:not(#editingToolbarModalBar *),
+.workspace-leaf-content[data-type*="copilot"] .clickable-icon svg:not(#editingToolbarModalBar *),
+.workspace-leaf-content[data-type*="copilot"] svg {
+    color: white !important;
+    stroke: white !important;
+}
+
+/* ===== EXCEPTIONS - These must come LAST to override the above rules ===== */
+
+/* EXCEPTION: Keep text black in white background chip/badge */
+.workspace-leaf-content[data-type*="copilot"] .tw-bg-primary-alt .tw-text-normal,
+.workspace-leaf-content[data-type*="copilot"] .tw-bg-primary-alt .tw-text-faint,
+.workspace-leaf-content[data-type*="copilot"] .tw-bg-primary-alt [data-testid="truncatedText"],
+.workspace-leaf-content[data-type*="copilot"] .tw-bg-primary-alt span {
+    color: black !important;
+}
+
+/* EXCEPTION: Completely exclude the editing toolbar */
+#editingToolbarModalBar,
+#editingToolbarModalBar *,
+.editingToolbarGlassAesthetic,
+.editingToolbarGlassAesthetic * {
+    color: inherit !important;
+}
+
+/* EXCEPTION: Keep text black in code blocks */
+.workspace-leaf-content[data-type*="copilot"] pre,
+.workspace-leaf-content[data-type*="copilot"] pre *,
+.workspace-leaf-content[data-type*="copilot"] code,
+.workspace-leaf-content[data-type*="copilot"] code *,
+.workspace-leaf-content[data-type*="copilot"] .ccb-code-block,
+.workspace-leaf-content[data-type*="copilot"] .ccb-code-block * {
+    color: black !important;
+}
+
+/* EXCEPTION: Keep copy-code-button and VSCode button black */
+.workspace-leaf-content[data-type*="copilot"] .copy-code-button,
+.workspace-leaf-content[data-type*="copilot"] .copy-code-button *,
+.workspace-leaf-content[data-type*="copilot"] .copy-code-button svg,
+.workspace-leaf-content[data-type*="copilot"] .vscode-button-wrapper,
+.workspace-leaf-content[data-type*="copilot"] .vscode-button-wrapper *,
+.workspace-leaf-content[data-type*="copilot"] .vscode-open-button,
+.workspace-leaf-content[data-type*="copilot"] .vscode-open-button * {
+    color: black !important;
+    stroke: black !important;
+}
+
+
+/* ========================================
+   NOTEBOOK NAVIGATOR - LIGHT GREY TEXT & WHITE ICONS
+   ======================================== */
+
+/* Base text color - light grey */
+.workspace-leaf-content[data-type="notebook-navigator"] {
+    color: #b3b3b3 !important;
+}
+
+/* View header title - pure white */
+.workspace-leaf-content[data-type="notebook-navigator"] .view-header-title,
+.workspace-leaf-content[data-type="notebook-navigator"] .view-header-title-parent {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Icons and clickable icons - pure white */
+.workspace-leaf-content[data-type="notebook-navigator"] .clickable-icon,
+.workspace-leaf-content[data-type="notebook-navigator"] .view-action,
+.workspace-leaf-content[data-type="notebook-navigator"] svg,
+.workspace-leaf-content[data-type="notebook-navigator"] .svg-icon,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-icon,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-icon svg,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-icon .svg-icon {
+    color: rgb(255, 255, 255) !important;
+    stroke: rgb(255, 255, 255) !important;
+}
+
+/* Navigation items - light grey text */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-pane-header-title,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-pane-header-text {
+    color: #b3b3b3 !important;
+}
+
+/* Navigation item names - pure white */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-name {
+    color: rgb(255, 255, 255);
+}
+
+/* Navigation item counts - darker grey */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem-count {
+    color: rgb(114, 116, 120) !important;
+}
+
+/* File list items - slightly off-white title, light grey for other text */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file-name {
+    color: rgb(230, 230, 230);
+}
+
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file-preview {
+    color: #d0d0d0;
+}
+
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file-date,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-parent-folder-label {
+    color: #b3b3b3;
+}
+
+/* Date group headers - light grey text */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-date-group-header-text {
+    color: #b3b3b3 !important;
+}
+
+/* Default tag color - match UI blue */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file-tag {
+    color: rgb(107, 170, 232) !important;
+}
+
+/* Button hover effects */
+.workspace-leaf-content[data-type="notebook-navigator"] button:hover,
+.workspace-leaf-content[data-type="notebook-navigator"] .clickable-icon:hover {
+    background-color: var(--hover-color) !important;
+}
+
+/* Keep icon stroke white on hover */
+.workspace-leaf-content[data-type="notebook-navigator"] .clickable-icon:hover svg,
+.workspace-leaf-content[data-type="notebook-navigator"] button:hover svg {
+    stroke: white !important;
+}
+
+/* Quick actions panel */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-quick-actions-panel,
+.nn-quick-actions-panel {
+    background-color: rgb(29, 33, 39) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Quick actions panel text elements */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-quick-actions-panel *,
+.nn-quick-actions-panel * {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Selected note/item background */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem.nn-selected,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected {
+    background-color: rgb(107, 170, 232) !important;
+    color: rgb(255, 255, 255) !important;
+    border-radius: 6px !important;
+}
+
+/* Selected note/item text elements - white text */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-file-name:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-file-preview:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-file-date:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-parent-folder-label:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem.nn-selected .nn-navitem-name:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected .nn-file-name:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected .nn-file-preview:not(.nn-file-tag),
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected .nn-file-date:not(.nn-file-tag) {
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Lighten count numbers on selected items */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-navitem-count,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem.nn-selected .nn-navitem-count {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Modal dialogs - black text and close button (for Notebook Navigator modals) */
+.modal .modal-header,
+.modal .modal-header *,
+.modal .modal-content,
+.modal .modal-content *,
+.modal .modal-title {
+    color: black !important;
+}
+
+.modal .modal-close-button.mod-raised,
+.modal .modal-close-button.mod-raised svg,
+.modal .modal-close-button svg {
+    color: black !important;
+    stroke: black !important;
+}
+
+/* Tags on selected items - almost white with hint of color */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected .nn-file-tag,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected .nn-file-tag {
+    filter: brightness(4.0) saturate(0.2) !important;
+}
+
+/* Selected note/item icons */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-selected svg,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem.nn-selected svg,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file.nn-selected svg {
+    stroke: rgb(255, 255, 255) !important;
+}
+
+/* Hover state for navigation items and files (excluding selected) */
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-navitem:not(.nn-selected):hover,
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-file:not(.nn-selected):hover {
+    background-color: rgb(46, 52, 61) !important;
+    border-radius: 6px !important;
+}
+
+.nn-pane-header-icon {
+  color: RGB(221, 222, 223) !important;
+  fill: #ffffff !important;
+}
+
+.workspace-leaf-content[data-type="notebook-navigator"] .nn-pane-header-title, .workspace-leaf-content[data-type="notebook-navigator"] .nn-pane-header-text {
+    color: rgb(221, 222, 223) !important;
+}
+
+/* ========================================
+   NOTEBOOK NAVIGATOR - OVERLAY DROP TARGET
+   ======================================== */
+
+/* The overlay container - semi-transparent dark overlay */
+.nn-navigation-pane-overlay {
+    background-color: rgba(29, 33, 39, 0.90) !important;
+}
+
+/* List pane overlay - semi-transparent dark overlay */
+.nn-list-pane-overlay {
+    background-color: rgba(29, 33, 39, 0.90) !important;
+}
+
+/* Calendar overlay - solid background */
+.nn-navigation-calendar-overlay {
+    background-color: rgb(29, 33, 39) !important;
+}
+
+/* Calendar header, nav, and grid - white text */
+.nn-navigation-calendar-header,
+.nn-navigation-calendar-header *,
+.nn-navigation-calendar-month,
+.nn-navigation-calendar-nav,
+.nn-navigation-calendar-nav *,
+.nn-navigation-calendar-nav-button,
+.nn-navigation-calendar-nav-button svg,
+.nn-navigation-calendar-today,
+.nn-navigation-calendar-grid,
+.nn-navigation-calendar-grid *,
+.nn-navigation-calendar-weekday,
+.nn-navigation-calendar-day,
+.nn-navigation-calendar-day-number {
+    color: rgb(255, 255, 255) !important;
+    stroke: rgb(255, 255, 255) !important;
+}
+
+/* Calendar day cells - border grid */
+.nn-navigation-calendar-day {
+    border: 1px solid rgba(199, 199, 199, 0.2) !important;
+}
